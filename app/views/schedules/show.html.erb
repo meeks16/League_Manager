@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>When:</b>
+  <%= @schedule.when %>
+</p>
+
+<p>
+  <b>Hour:</b>
+  <%= @schedule.hour %>
+</p>
+
+<p>
+  <b>Match:</b>
+  <%= @schedule.match %>
+</p>
+
+<p>
+  <b>Opponent:</b>
+  <%= @schedule.opponent %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
