@@ -1,3 +1,3 @@
 def index 
-	@tempscheds = Tempscheds.all 
+	@tempscheds = Tempsched.all 
 end
