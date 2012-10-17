@@ -1,11 +1,11 @@
 class TempsController < ApplicationController
 
 	def sched 
-		@temp = Temp.all 
+		render 'sched'
 	end
 
 	def standing
-		@temp = Temp.all 
+		render 'standings' 
 	end	
 
 end
