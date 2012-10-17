@@ -4,7 +4,8 @@ LeagueManager::Application.routes.draw do
 
   resources :teams
   
-  get 'sched' => 'temps#sched' 
+  get 'sched', 	:controller => 'temps', 
+  				:action => 'sched' 
   
   get 'standings' => 'temps#standing'
 
