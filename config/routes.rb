@@ -4,8 +4,8 @@ LeagueManager::Application.routes.draw do
 
   resources :teams
   
-  get 'sched' => 'temps#sched', :as => temporary_schedules  
+  get 'sched' => 'temps#sched'
   
-  get 'standings' => 'temps#standing', :as => temporary_standings
+  get 'standings' => 'temps#standing'
   
 end
