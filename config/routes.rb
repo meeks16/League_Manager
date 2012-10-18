@@ -1,6 +1,6 @@
 LeagueManager::Application.routes.draw do
   
-  root :to => 'temps#sched'
+  root :to => 'Temps#sched'
   
   resources :schedules
 
