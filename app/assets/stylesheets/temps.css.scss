@@ -9,14 +9,14 @@ table.imagetable {
 	border-collapse: collapse;
 }
 table.imagetable th {
-	background:#b5cfd2 url('cell-blue.jpg');
+	background:#b5cfd2;
 	border-width: 1px;
 	padding: 8px;
 	border-style: solid;
 	border-color: #999999;
 }
 table.imagetable td {
-	background:#dcddc0 url('cell-grey.jpg');
+	background:#dcddc0;
 	border-width: 1px;
 	padding: 8px;
 	border-style: solid;
@@ -24,3 +24,7 @@ table.imagetable td {
 }
 </style>
 
+/*
+background:#b5cfd2 url('cell-blue.jpg')
+background:#dcddc0 url('cell-grey.jpg')
+*/
