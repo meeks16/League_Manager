@@ -1,24 +1,33 @@
 <html>
-
 <head>
-	<style type="text/css">
-		body {  }
-		table { border: solid 1px #000; }
-		thead tr { background:#8fbc8f; }	
-		tr { background:#e0ffff; }
-		tr.alt { background:#fafad2; }
-	</style>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 </head>
+<!--
+<head>
+<style type="text/css">
+	body { background-color: rgba(169,153,27,0.6);
+			margin: 0px 100px 0px 0px}
+	table { border: solid 1px #000; }
+	thead tr { background:rgba(255,255,255,1); }	
+	tr { background:#e0ffff; }
+	tr.alt { background:#fafad2; }
+</style>
+</head>
+-->
 
 <h1>Oz Park Fall 2012</h1>
 
 <h2>Schedule</h2>
 
 <body>
+ <%= link_to 'View League Standings', standings_url %>
 
-<%= link_to 'View League Standings', standings_url %>
+<!-- <table border="1" cellpadding="10"> -->
+<table>
 
-<table border="1" cellpadding="10">
 <thead>
 <tr>
 	<th>Date</th>

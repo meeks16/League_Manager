@@ -1,6 +1,25 @@
-<h1>Oz Park Schedule</h1>
+<html>
 
-<table>
+<head>
+	<style type="text/css">
+		body {  }
+		table { border: solid 1px #000; }
+		thead tr { background:#8fbc8f; }	
+		tr { background:#e0ffff; }
+		tr.alt { background:#fafad2; }
+	</style>
+</head>
+
+<h1>Oz Park Fall 2012</h1>
+
+<h2>Schedule</h2>
+
+<body>
+
+<%= link_to 'View League Standings', teams_url %>
+
+<table border="1" cellpadding="8">
+<thead>
   <tr>
     <th>Date</th>
     <th>Time</th>
@@ -10,6 +29,7 @@
     <th></th>
     <th></th>
   </tr>
+</thead>
 
 <% @schedules.each do |schedule| %>
   <tr>
@@ -25,7 +45,9 @@
   </tr>
 <% end %>
 </table>
+</body>
+</html>
 
 <br />
 
-<%= link_to 'New Schedule', new_schedule_path %>
+<!-- <%= link_to 'New Schedule', new_schedule_path %> -->

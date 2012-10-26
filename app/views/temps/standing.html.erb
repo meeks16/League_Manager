@@ -1,21 +1,35 @@
 <html>
+
 <head>
-	<style type="text/css">
-		body {  }
-		table { border: solid 1px #000; }
-		thead tr { background:#fafad2; }	
-		tr { background:#e0ffff; }
-	</style>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 </head>
+<!--
+<head>
+<style type="text/css">
+	body { background-color:rgba(169,153,27,0.6);
+			margin:0px 100px 0px 0px}
+	table { border: solid 1px #000; }
+	thead tr { background:#fafad2; }	
+	tr { background:#e0ffff; }
+</style>
+</head>
+-->
 
 <h1>Oz Park Fall 2012 </h1>
 
 <h2>Team Standings</h2>
-<h3>Last updated on October 24 2012</h3>
+
+<p>(Last updated on October 24 2012)</p>
+
+<body>
 
 <%= link_to 'Back to League Schedule', sched_url %>
 
-<table border=".5" cellpadding="10">
+<!-- <table border=".5" cellpadding="10"> -->
+<table>
 
 <thead>
 
@@ -28,61 +42,62 @@
 </thead>
 
 <tbody>
-
 <tr>
-	<td>In Your Face</td>
-	<td align="center">15</td>
-	<td align="center">13</td>
-	<td align="center">2</td>
+	<td> In Your Face </td>
+	<td>15 </td>
+	<td>13</td>
+	<td>2</td>
 </tr>
 
 <tr>
 	<td>Tuesday</td>
-	<td align="center">18</td>
-	<td align="center">14</td>
-	<td align="center">4</td>
+	<td>18</td>
+	<td>14</td>
+	<td>4</td>
 </tr>
 
 
 
 <tr>
 	<td>Jabbonga</td>
-	<td align="center">18</td>
-	<td align="center">11</td>
-	<td align="center">7</td>
+	<td>18</td>
+	<td>11</td>
+	<td>7</td>
 </tr>
 
 <tr>
 	<td>Chivas</td>
-	<td align="center">18</td>
-	<td align="center">10</td>
-	<td align="center">8</td>
+	<td>18</td>
+	<td>10</td>
+	<td>8</td>
 </tr>
 
 <tr>
 	<td>Generations</td>
-	<td align="center">15</td>
-	<td align="center">9</td>
-	<td align="center">6</td>
+	<td>15</td>
+	<td>9</td>
+	<td>6</td>
 </tr>
 
 <tr>
 	<td>Green Monkeys</td>
-	<td align="center">18</td>
-	<td align="center">3</td>
-	<td align="center">15</td>
+	<td>18</td>
+	<td>3</td>
+	<td>15</td>
 </tr>
 
 <tr>
 	<td>Rec-n-Ballz</td>
-	<td align="center">18</td>
-	<td align="center">0</td>
-	<td align="center">18</td>
+	<td>18</td>
+	<td>0</td>
+	<td>18</td>
 </tr>
 
 </tbody>
 
 </table>
+
+</body>
 
 </html>
 

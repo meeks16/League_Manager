@@ -1,16 +1,36 @@
-<h1>League Teams</h1>
+<html>
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<h1>Oz Park Fall 2012 </h1>
+
+<h2>Team Standings</h2>
+
+<h3>Last updated on October 24 2012</h3>
+
+<%= link_to 'Back to League Schedule', schedules_url %>
 
 <table>
+
+<thead>
   <tr>
-    <th>Name</th>
-    <th>SP</th>
-    <th>W</th>
-    <th>L</th>
+    <th>Teams</th>
+    <th>Sets Played</th>
+    <th>Sets Won</th>
+    <th>Sets loss</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+</thead>
 
+<tbody>
 <% @teams.each do |team| %>
   <tr>
     <td><%= link_to team.name, team %></td>
@@ -21,8 +41,11 @@
     <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
+ 
 </table>
 
 <br />
 
 <%= link_to 'New Team', new_team_path %>
+</html>
