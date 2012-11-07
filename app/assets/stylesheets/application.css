@@ -5,7 +5,7 @@ body {
   width: 960px;
   font-size: 18px;
   line-height: 29px;
-  background: #EEE;
+  background: #EEE; 
 }
 
 #moolah {
@@ -35,8 +35,18 @@ header p {
 }
 
 header h1 {
-  font-size: 32px;
-  line-height: 48px;
+	font-size: 60px;
+	text-align: left;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-family: 'Underdog', cursive;
+	letter-spacing: -5px;
+	color: blue;
+	text-shadow:
+	5px -1px 0 yellow,
+	6px -2px 0 lightblue;
+	font-variant: normal;
+	line-height: 48px;
 }
 
 header h1 a, header h1 a:active, header h1 a:visited, header h1 a:hover {
@@ -44,11 +54,17 @@ header h1 a, header h1 a:active, header h1 a:visited, header h1 a:hover {
   text-decoration: none;
   border: none;
 }
-h2 { 
-  font-size: 24px; 
-  line-height: 48px; 
+header h2 { 
+  font-size: 30px; 
+  line-height: 30px; 
+  text-align: left;
+  margin-top: 10px;  
   margin-bottom: 12px;
-//  border-bottom: solid 2px #009;
+  margin-left: 10px;
+  color: black;
+  font-family: 'Underdog', cursive;
+  //  border-bottom: solid 2px #009;
+	
 }
 
 button {
@@ -71,6 +87,11 @@ header ul li  {
   margin-left: 20px;
   display: block;
   text-align: right;
+}
+header img {
+	float: right;
+	margin-left: 30px;
+	margin-top: 0px;
 }
 
 table {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002141711) do
+ActiveRecord::Schema.define(:version => 20121031225624) do
 
   create_table "schedules", :force => true do |t|
     t.string   "when"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(:version => 20121002141711) do
     t.integer  "losses"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.string   "password"
+    t.string   "password_confirmation"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
 end
