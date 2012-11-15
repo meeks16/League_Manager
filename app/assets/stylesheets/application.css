@@ -112,6 +112,12 @@ tr {
   border-bottom: solid 1px #666;
   background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(215,228,250,0.12) 100%) 
 }
+
+tr.alt {
+  border-bottom: solid 1px #666;
+  background-color: rgba(230,187,187,1) 
+}
+
 td {
   color: #333;
   text-align: center;
