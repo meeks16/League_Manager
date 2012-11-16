@@ -112,10 +112,19 @@ tr {
   border-bottom: solid 1px #666;
   background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(215,228,250,0.12) 100%) 
 }
+<<<<<<< HEAD
 tr.alt {
   background-color: #f8d4d4;
   background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(215,228,250,0.12) 100%) 
 }
+=======
+
+tr.alt {
+  border-bottom: solid 1px #666;
+  background-color: rgba(230,187,187,1) 
+}
+
+>>>>>>> 2b5d1b54b87dfc5babe788b1cd022d2e3b225133
 td {
   color: #333;
   text-align: center;
