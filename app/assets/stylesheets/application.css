@@ -112,11 +112,14 @@ tr {
   border-bottom: solid 1px #666;
   background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(215,228,250,0.12) 100%) 
 }
+tr.alt {
+  background-color: #f8d4d4;
+  background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(215,228,250,0.12) 100%) 
+}
 td {
   color: #333;
   text-align: center;
 }
-
 nav { 
   float: right;
 }
