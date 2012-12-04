@@ -126,6 +126,11 @@ td {
   color: #333;
   text-align: center;
 }
+td.alt {
+  background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(239,181,188,0.66) 100%);
+  font:bold;
+  text-align: center;
+}
 nav { 
   float: right;
 }
