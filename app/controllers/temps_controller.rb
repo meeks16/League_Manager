@@ -7,5 +7,9 @@ class TempsController < ApplicationController
 	def standing
 	
 	end	
+	
+	def contact
+	
+	end
 
 end

@@ -10,4 +10,6 @@ LeagueManager::Application.routes.draw do
   
   get 'standings' => 'temps#standing'
   
+  get 'contacts' => 'temps#contact'
+  
 end
