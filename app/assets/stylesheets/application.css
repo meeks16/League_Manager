@@ -5,7 +5,8 @@ body {
   width: 960px;
   font-size: 18px;
   line-height: 29px;
-  background: #EEE; 
+  /* background: #EEE; */ 
+  background-image: url("/assets/purty_wood_@2X.png");
 }
 
 #moolah {
@@ -25,7 +26,7 @@ header {
   border-bottom: solid 4px #000;
   line-height: 24px;
   padding: 6px;
-  background: #FFF;
+  background: rgba(250,250,253,1);
 }
 
 header p {
@@ -61,7 +62,7 @@ header h2 {
   margin-top: 10px;  
   margin-bottom: 12px;
   margin-left: 10px;
-  color: black;
+  color: #eaf079;
   font-family: 'Underdog', cursive;
   //  border-bottom: solid 2px #009;
 	
@@ -106,20 +107,20 @@ table, td, th  {
 
 th {
 //  border-top: solid 2px #009;
-	background-image: -webkit-linear-gradient(rgba(247,249,196,0.98) 0%, rgba(249,251,215,0.08) 100%)
+	background-image: -webkit-linear-gradient(#fafcfd 0%, #f7f7c7 100%)
 }
 tr {
   border-bottom: solid 1px #666;
-  background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(215,228,250,0.12) 100%) 
+  background-image:  -webkit-linear-gradient(#b9d7fb 0%, rgba(255,255,255,1) 100%) 
 }
 tr.alt {
   background-color: #f8d4d4;
-  background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(215,228,250,0.12) 100%) 
+  background-image: -webkit-linear-gradient(rgba(152,191,240,0.94) 0%, rgba(215,228,250,0.12) 100%) 
 }
 
 tr.alt {
-  border-bottom: solid 1px #666;
-  background-color: rgba(230,187,187,1) 
+  border-bottom: solid 1px #666; 
+  background-color: rgba(250,250,253,0.22) 
 }
 
 td {
