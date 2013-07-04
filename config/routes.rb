@@ -12,12 +12,28 @@ LeagueManager::Application.routes.draw do
 
   resources :teams
   
-  get 'sched' => 'temps#sched'
+  get 'home' => 'home#index'
   
-  get 'standings' => 'temps#standing'
+  get 'sched' => 'schedules#index'
+  
+  get 'standings' => 'teams#index'
   
   get 'contacts' => 'temps#contact'
+    
   
+#   delete 'lines/:id', :controller => 'lines', :action => 'destroy', :as => 'train_line'
+  
+  put 'seasons/:id' => 'seasons#update'
+  
+  get 'seasons/:id/edit' => 'seasons#edit', :as => 'edit_season'
+  
+  post 'seasons' => 'seasons#create'# , :as => 'train_lines'
+  
+  get 'seasons/new' => 'seasons#new', :as => 'new_season'
+  
+  get 'seasons' => 'seasons#index'
+  
+  get 'lines/:id' => 'seasons#show'
   
   
   

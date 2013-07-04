@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<h1>Seasons</h1>
+
+<table>
+
+<thead>
+  <tr>
+    <th>Season</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Day of week</th>
+    <th>Number of Courts</th>
+<!--
+    <% if user_signed_in? %>
+    	<th></th>
+    	<th></th>
+    <% end %>
+-->
+
+  </tr>
+</thead>
+
+<tbody>
+<% @seasons.each do |season| %>
+  <tr>
+    <td><%= season.name %></td>
+    <td><%= season.start %></td>
+    <td><%= season.end %></td>
+    <td><%= season.frequency %></td>
+    <td><%= season.number_of_courts %></td>
+
+  </tr>
+<% end %>
+</tbody>
+ 
+</table>
+
+<br />
+	<% if user_signed_in? %>
+		<%= link_to 'Create A Season?', new_season_path %>
+	<% end %>
+</html>

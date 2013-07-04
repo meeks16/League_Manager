@@ -1,0 +1,198 @@
+body {
+  font-family: "Helvetica";
+  margin: 20px auto;
+  width: 960px;
+  font-size: 18px;
+  line-height: 29px;
+  background-image: url("/assets/purty_wood_@2X.png");
+}
+
+#moolah {
+  color: green;
+  font-weight: bold;
+}
+
+#container {
+  background: #FFF;
+  padding: 12px;
+  padding-bottom: 48px;
+  border: solid 1px #BBB;
+}
+
+header {
+  margin-bottom: 12px;
+  border-bottom: solid 4px #000;
+  line-height: 24px;
+  padding: 6px;
+  background: rgba(250,250,253,1);
+}
+
+header p {
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 32px;
+}
+
+header h1 {
+	font-size: 60px;
+	text-align: left;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-family: 'Underdog', cursive;
+	letter-spacing: -5px;
+	color: blue;
+	text-shadow:
+	5px -1px 0 yellow,
+	6px -2px 0 lightblue;
+	font-variant: normal;
+	line-height: 48px;
+}
+
+header h1 a, header h1 a:active, header h1 a:visited, header h1 a:hover {
+  color: #000;
+  text-decoration: none;
+  border: none;
+}
+header h2 { 
+  font-size: 30px; 
+  line-height: 30px; 
+  text-align: left;
+  margin-top: 10px;  
+  margin-bottom: 12px;
+  margin-left: 10px;
+  color: #eaf079;
+  font-family: 'Underdog', cursive;
+  //  border-bottom: solid 2px #009;
+	
+}
+
+button {
+  font-size: 16px;
+  background: #090;
+  color: #FFF;
+}
+header ul {
+  overflow:hidden;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+header ul li {
+//  display: inline;
+  float: left;
+}
+
+header ul li  {
+  margin-left: 20px;
+  display: block;
+  text-align: right;
+}
+header img {
+	float: right;
+	margin-left: 30px;
+	margin-top: 0px;
+}
+
+table {
+  width: 100%;
+  border-top: solid 1px #000;
+  margin-top: 24px;
+}
+table, td, th  {
+  border-collapse: collapse;
+  padding: 12px;
+}
+
+th {
+//  border-top: solid 2px #009;
+	background-image: -webkit-linear-gradient(#fafcfd 0%, #f7f7c7 100%)
+}
+tr {
+  border-bottom: solid 1px #666;
+  background-image:  -webkit-linear-gradient(#b9d7fb 0%, rgba(255,255,255,1) 100%) 
+}
+tr.alt {
+  background-color: #f8d4d4;
+  background-image: -webkit-linear-gradient(rgba(152,191,240,0.94) 0%, rgba(215,228,250,0.12) 100%) 
+}
+
+tr.alt {
+  border-bottom: solid 1px #666; 
+  background-color: rgba(250,250,253,0.22) 
+}
+
+td {
+  color: #333;
+  text-align: center;
+}
+td.alt {
+  background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(239,181,188,0.66) 100%);
+  font:bold;
+  text-align: center;
+}
+#nav { 
+  float: right;
+}
+
+#content {
+  margin-top: 24px;
+  padding: 6px;
+  background: #FFF;
+}
+
+#search label {
+  font-size: 18px;
+  margin-right: 12px;
+  padding: 6px 0px;
+}
+#search input {
+  font-size: 16px;
+  padding: 6px;
+}
+
+footer {
+  margin-top: 12px;
+//  border-top: solid 2px #900;
+  color: #666;
+  font-style: italic;
+  font-size: 14px;
+}
+
+
+a, a:visited, a:active {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: dotted 1px blue;
+}
+
+#help ol {
+  margin: 0;
+  padding-left: 40px;
+  margin-bottom: 12px;
+}
+
+#help p {
+  line-height: 42px;
+}
+
+#help span {
+  color: #008;
+  font-style: italic;
+}
+#ground_rules {
+  border-top: solid 1px #444;
+}
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: -170 -50px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}

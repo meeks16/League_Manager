@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @seasons.name %> 
+</h1>
+
+<p>
+  Record:(<%= @season.start%>W-<%=@team.end%>L)
+</p>
+
+
+<!-- <%= link_to 'Edit', edit_team_path(@team) %> | -->
+<%= link_to 'Back', seasons_path %>

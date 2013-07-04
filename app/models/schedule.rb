@@ -1,3 +1,3 @@
 class Schedule < ActiveRecord::Base
-  attr_accessible :hour, :match, :opponent, :when
+  attr_accessible :date, :timeslot, :teamA, :teamB
 end

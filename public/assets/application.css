@@ -1,0 +1,235 @@
+/* line 2, ../../app/assets/stylesheets/application.css.scss */
+body {
+  font-family: "Helvetica";
+  margin: 20px auto;
+  width: 960px;
+  font-size: 18px;
+  line-height: 29px;
+  background-image: url("/assets/purty_wood_@2X.png");
+}
+
+/* line 11, ../../app/assets/stylesheets/application.css.scss */
+#moolah {
+  color: green;
+  font-weight: bold;
+}
+
+/* line 16, ../../app/assets/stylesheets/application.css.scss */
+#container {
+  background: #FFF;
+  padding: 12px;
+  padding-bottom: 48px;
+  border: solid 1px #BBB;
+}
+
+/* line 23, ../../app/assets/stylesheets/application.css.scss */
+header {
+  margin-bottom: 12px;
+  border-bottom: solid 4px #000;
+  line-height: 24px;
+  padding: 6px;
+  background: #fafafd;
+}
+
+/* line 31, ../../app/assets/stylesheets/application.css.scss */
+header p {
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 32px;
+}
+
+/* line 37, ../../app/assets/stylesheets/application.css.scss */
+header h1 {
+  font-size: 60px;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-family: 'Underdog', cursive;
+  letter-spacing: -5px;
+  color: blue;
+  text-shadow: 5px -1px 0 yellow, 6px -2px 0 lightblue;
+  font-variant: normal;
+  line-height: 48px;
+}
+
+/* line 52, ../../app/assets/stylesheets/application.css.scss */
+header h1 a, header h1 a:active, header h1 a:visited, header h1 a:hover {
+  color: #000;
+  text-decoration: none;
+  border: none;
+}
+
+/* line 57, ../../app/assets/stylesheets/application.css.scss */
+header h2 {
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  margin-left: 10px;
+  color: #eaf079;
+  font-family: 'Underdog', cursive;
+}
+
+/* line 70, ../../app/assets/stylesheets/application.css.scss */
+button {
+  font-size: 16px;
+  background: #090;
+  color: #FFF;
+}
+
+/* line 75, ../../app/assets/stylesheets/application.css.scss */
+header ul {
+  overflow: hidden;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+/* line 81, ../../app/assets/stylesheets/application.css.scss */
+header ul li {
+  float: left;
+}
+
+/* line 86, ../../app/assets/stylesheets/application.css.scss */
+header ul li {
+  margin-left: 20px;
+  display: block;
+  text-align: right;
+}
+
+/* line 91, ../../app/assets/stylesheets/application.css.scss */
+header img {
+  float: right;
+  margin-left: 30px;
+  margin-top: 0px;
+}
+
+/* line 97, ../../app/assets/stylesheets/application.css.scss */
+table {
+  width: 100%;
+  border-top: solid 1px #000;
+  margin-top: 24px;
+}
+
+/* line 102, ../../app/assets/stylesheets/application.css.scss */
+table, td, th {
+  border-collapse: collapse;
+  padding: 12px;
+}
+
+/* line 107, ../../app/assets/stylesheets/application.css.scss */
+th {
+  background-image: -webkit-linear-gradient(#fafcfd 0%, #f7f7c7 100%);
+}
+
+/* line 111, ../../app/assets/stylesheets/application.css.scss */
+tr {
+  border-bottom: solid 1px #666;
+  background-image: -webkit-linear-gradient(#b9d7fb 0%, white 100%);
+}
+
+/* line 115, ../../app/assets/stylesheets/application.css.scss */
+tr.alt {
+  background-color: #f8d4d4;
+  background-image: -webkit-linear-gradient(rgba(152, 191, 240, 0.94) 0%, rgba(215, 228, 250, 0.12) 100%);
+}
+
+/* line 120, ../../app/assets/stylesheets/application.css.scss */
+tr.alt {
+  border-bottom: solid 1px #666;
+  background-color: rgba(250, 250, 253, 0.22);
+}
+
+/* line 125, ../../app/assets/stylesheets/application.css.scss */
+td {
+  color: #333;
+  text-align: center;
+}
+
+/* line 129, ../../app/assets/stylesheets/application.css.scss */
+td.alt {
+  background-image: -webkit-linear-gradient(#b9d7fb 0%, rgba(239, 181, 188, 0.66) 100%);
+  font: bold;
+  text-align: center;
+}
+
+/* line 134, ../../app/assets/stylesheets/application.css.scss */
+#nav {
+  float: right;
+}
+
+/* line 138, ../../app/assets/stylesheets/application.css.scss */
+#content {
+  margin-top: 24px;
+  padding: 6px;
+  background: #FFF;
+}
+
+/* line 144, ../../app/assets/stylesheets/application.css.scss */
+#search label {
+  font-size: 18px;
+  margin-right: 12px;
+  padding: 6px 0px;
+}
+
+/* line 149, ../../app/assets/stylesheets/application.css.scss */
+#search input {
+  font-size: 16px;
+  padding: 6px;
+}
+
+/* line 154, ../../app/assets/stylesheets/application.css.scss */
+footer {
+  margin-top: 12px;
+  color: #666;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* line 163, ../../app/assets/stylesheets/application.css.scss */
+a, a:visited, a:active {
+  color: blue;
+  text-decoration: none;
+}
+
+/* line 168, ../../app/assets/stylesheets/application.css.scss */
+a:hover {
+  border-bottom: dotted 1px blue;
+}
+
+/* line 172, ../../app/assets/stylesheets/application.css.scss */
+#help ol {
+  margin: 0;
+  padding-left: 40px;
+  margin-bottom: 12px;
+}
+
+/* line 178, ../../app/assets/stylesheets/application.css.scss */
+#help p {
+  line-height: 42px;
+}
+
+/* line 182, ../../app/assets/stylesheets/application.css.scss */
+#help span {
+  color: #008;
+  font-style: italic;
+}
+
+/* line 186, ../../app/assets/stylesheets/application.css.scss */
+#ground_rules {
+  border-top: solid 1px #444;
+}
+
+/* line 189, ../../app/assets/stylesheets/application.css.scss */
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: -170 -50px;
+  /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}

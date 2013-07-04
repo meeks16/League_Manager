@@ -1,18 +1,13 @@
 <html>
 
 <head>
-	<style type="text/css">
-		body {  }
-		table { border: solid 1px #000; }
-		thead tr { background:#8fbc8f; }	
-		tr { background:#e0ffff; }
-		tr.alt { background:#fafad2; }
-	</style>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 </head>
 
-<h1>Oz Park Fall 2012</h1>
-
-<h2>Schedule</h2>
+<h1>Schedule</h1>
 
 <body>
 
@@ -23,25 +18,29 @@
   <tr>
     <th>Date</th>
     <th>Time</th>
-    <th>Court 1</th>
-    <th>Court 2</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Court</th>
+    <th>Home</th>
+    <th>Away</th>
+    <% if user_signed_in? %>
+    	<th></th>
+    	<th></th>
+    	<th></th>
+    <% end %>
   </tr>
 </thead>
 
 <% @schedules.each do |schedule| %>
   <tr>
-    <td><%= schedule.when %></td>
-    <td><%= schedule.hour %></td>
-    <td><%= schedule.match %></td>
-    <td><%= schedule.opponent %></td>
-<!--
-    <td><%= link_to 'Show', schedule %></td>
-    <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-    <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
--->
+    <td><%= schedule.date %></td>
+    <td><%= schedule.timeslot %></td>
+    <td><%= schedule.court %></td>
+    <td><%= schedule.teamA %></td>
+    <td><%= schedule.teamB %></td>
+    <% if user_signed_in? %>
+    	<td><%= link_to 'Show', schedule %></td>
+    	<td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
+    	<td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
