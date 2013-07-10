@@ -41,8 +41,9 @@ class SeasonsController < ApplicationController
   end
   
   def show
-    @seasons = SeasonTeam.find_by_id(params[:id])
-    
+    @season = Season.find_by_id(params[:id])
+    @seasons = Season.all
+    @seasonTeams = SeasonTeam.all
     respond_to do |format|
       format.html
       format.json { render :json => @seasons }

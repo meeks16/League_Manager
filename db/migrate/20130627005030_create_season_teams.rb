@@ -7,5 +7,8 @@ class CreateSeasonTeams < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :season_teams, :season_id
+    add_index :season_teams, :team_id
+    add_index :season_teams, :user_id
   end
 end

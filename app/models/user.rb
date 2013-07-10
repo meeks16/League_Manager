@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   
-  belongs_to :season_teams 
+  has_many :season_teams 
+  has_and_belongs_to_many :teams
   
 end

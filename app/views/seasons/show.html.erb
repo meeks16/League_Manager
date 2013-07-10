@@ -1,13 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= @seasons.name %> 
-</h1>
+<h1><%= @season.league_name %></h1>
 
-<p>
-  Record:(<%= @season.start%>W-<%=@team.end%>L)
-</p>
+<p><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
 
+	<div class="span6">
+		<h4>Seasons</h4>
+			<% @seasons.each do |stable| %>
+			<p><%= link_to "#{stable.league_name} #{stable.name}", stable %></p>
+			<p><%= "#{stable.start} - #{stable.end}" %></p>
+			<% end %>
+	</div>
 
-<!-- <%= link_to 'Edit', edit_team_path(@team) %> | -->
-<%= link_to 'Back', seasons_path %>
+        <div class="span6">
+          <h4>Teams</h4>
+          	<% @seasonTeams.each do |seasonTeam| %>
+          		<p><%= seasonTeam.team_id %></p>
+          	<% end %>
+        </div>
+
+        <div class="span6">
+          <h4>Schedule</h4>
+
+        </div>

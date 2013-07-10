@@ -1,4 +1,25 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% @seasons.each do |season| %>
+<h1>Volleyball Legues</h1>
+<p>Serve it Up!</p>
 <p><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
+        <div class="span6">
+          <h4>Seasons</h4>
+          	<% @seasons.each do |stable| %>
+          		<p><%= link_to "#{stable.league_name} #{stable.name}", season %> </p>
+          		<p><%= "#{stable.start} - #{stable.end}"%> </p>
+          	<% end %>
+        </div>
+        
+        <div class="span6">
+          <h4>Teams</h4>
+          	<% @teams.each do |team| %>
+          		<p><%= team.name %> </p>
+          	<% end %>
+        </div>
 
+        <div class="span6">
+          <h4>Schedule</h4>
+
+        </div>
+<% end %>
+          

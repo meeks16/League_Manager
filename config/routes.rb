@@ -33,7 +33,7 @@ LeagueManager::Application.routes.draw do
   
   get 'seasons' => 'seasons#index'
   
-  get 'lines/:id' => 'seasons#show'
+  get 'seasons/:id' => 'seasons#show', :as => 'season'
   
   
   
