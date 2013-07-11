@@ -15,18 +15,11 @@
         <div class="span6">
           <h4>Teams</h4>
           	<% @teams.each do |team| %>
-          		<p><%= team.name %></p>
-          		<% team.users.each do |user| %>
-          		<p><%= user.email %></p>
-          		<% end %>
-          		
+          		<p><%= team.name %></p>	
           	<% end %>
         </div>
 
         <div class="span6">
-          <h4>Playesr</h4>
-          	<% @users.each do |user| %>
-          		<p><%= user.email %></p>
-          		
-          	<% end %>
+          <h4>Players</h4>
+
         </div>
