@@ -43,7 +43,11 @@ class SeasonsController < ApplicationController
   def show
     @season = Season.find_by_id(params[:id])
     @teams = @season.teams.uniq{|team| team.id}
-#     @users = @season.season_team_users
+    @users = @season.users.uniq{|user| user.id}
+    
+#     @seasonteam = @teams.season_teams.map{|seasonteam| seasonteam.id}
+#     @users = @seasonteam.users
+
 
     @seasons = Season.all
 

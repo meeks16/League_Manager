@@ -1,6 +1,6 @@
 class RemoveColumnSeasonTeam < ActiveRecord::Migration
   def up
-  	remove_column :season_teams, :user_id
+  	remove_column :season_teams, :user_id	
   end
 
   def down

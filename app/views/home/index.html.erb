@@ -1,4 +1,4 @@
-<% @seasons.each do |season| %>
+# <% @seasons.each do |season| %>
 <h1>Volleyball Legues</h1>
 <p>Serve it Up!</p>
 <p><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
@@ -18,8 +18,10 @@
         </div>
 
         <div class="span6">
-          <h4>Schedule</h4>
-
+          <h4>Players</h4>
+          	<% @users.each do |user| %>
+          		<p><%= user.email %></p>	
+          	<% end %>
         </div>
-<% end %>
+<!-- <% end %> -->
           
