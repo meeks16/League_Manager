@@ -1,28 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @season.league_name %></h1>
+<div class="container-narrow">
+	<hr>
+	<div class="jumbotron">
+		<h1><%= @season.league_name %></h1>
 
-<p><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
-
-	<div class="span6">
-		<h4>Seasons</h4>
-			<% @seasons.each do |stable| %>
-			<p><%= link_to "#{stable.league_name} #{stable.name}", stable %></p>
-			<p><%= "#{stable.start} - #{stable.end}" %></p>
-			<% end %>
+		<p class="lead"><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
 	</div>
+	<hr>
+	<div class="row-fluid marketing">
+		<div class="span6">
+			<h4>Seasons</h4>
+			<% @seasons.each do |stable| %>
+				<p><%= link_to "#{stable.league_name} #{stable.name}", stable %></p>
+				<p><%= "#{stable.start} - #{stable.end}" %></p>
+			<% end %>
+		</div>
 
         <div class="span6">
-          <h4>Teams</h4>
+        	<h4>Teams</h4>
           	<% @teams.each do |team| %>
-          		<p><%= team.name %> </p>
+          		<p><%= link_to "#{team.name}", team %> </p>
+          			<% team.users.each do |user| %>
+          				<p><%= user.email %> </p>		
+          			<% end %>
           	<% end %>
         </div>
 
+<!--
         <div class="span6">
           <h4>Players</h4>
           	<% @users.each do |user| %>
           		<p><%= user.email %> </p>
           	<% end %>
-
         </div>
+-->
+	</div>
+	<hr>
+</div>

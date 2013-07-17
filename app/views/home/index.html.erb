@@ -1,11 +1,17 @@
-# <% @seasons.each do |season| %>
-<h1>Volleyball Legues</h1>
-<p>Serve it Up!</p>
-<p><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
+
+<div class="container-narrow">
+<hr>
+<div class="jumbotron">
+	<h1>Serve it Up!</h1>
+	<!-- <p>Volleyball Legues</p> -->
+	<p class="lead"><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
+</div>
+<hr>
+	<div class="row-fluid marketing">
         <div class="span6">
           <h4>Seasons</h4>
           	<% @seasons.each do |stable| %>
-          		<p><%= link_to "#{stable.league_name} #{stable.name}", season %> </p>
+          		<p><%= link_to "#{stable.league_name} #{stable.name}", stable %> </p>
           		<p><%= "#{stable.start} - #{stable.end}"%> </p>
           	<% end %>
         </div>
@@ -23,5 +29,7 @@
           		<p><%= user.email %></p>	
           	<% end %>
         </div>
-<!-- <% end %> -->
-          
+    <div>
+<hr>
+</div>
+

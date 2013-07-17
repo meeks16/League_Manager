@@ -1,4 +1,5 @@
 
+  
 body {
   font-family: "Helvetica";
   margin: 20px auto;
@@ -185,15 +186,4 @@ a:hover {
 }
 #ground_rules {
   border-top: solid 1px #444;
-}
-.content {
-  background-color: #eee;
-  padding: 20px;
-  margin: -170 -50px; /* negative indent the amount of the padding to maintain the grid system */
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-  box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }

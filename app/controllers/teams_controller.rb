@@ -14,7 +14,11 @@ class TeamsController < ApplicationController
   # GET /teams/1.json
   def show
     @team = Team.find(params[:id])
-
+    @users = @team.users.uniq{|user| user.id}
+    @teams = Team.all
+#     @season = Season.find_by_id(params[:id])
+#     @teams = @season.teams.uniq{|team| team.id}
+#     @users = @season.users.uniq{|user| user.id}
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @team }

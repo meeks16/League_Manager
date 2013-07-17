@@ -30,7 +30,6 @@
             </div>
           </div>
           
-<!--
           <footer>
           	<% if user_signed_in? %>
           		<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
@@ -38,7 +37,6 @@
           		<li><%= link_to'Sign In', sign_up_url %></a></li>
           	<% end %>
           </footer>
--->
         </div>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
@@ -46,86 +44,3 @@
 
 </html>
 
-<!--
-<html>
-<header>
-  <title>LeagueManager</title>
-  <a href="#">
-	<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQV2P_L7H_UCps0QvCYACzN0YyrdxL9lJNRrjm2JjSylxpHu6IM" />
-  <a/>  
-  <h1>Oz Park </h1>
-  <h2>Volleyball</h2>	
-  
- <ul>
- 	<li><%= link_to 'Home', home_url %></li>
-   	<li><%= link_to 'Schedule', sched_url %></li>		
-   	<li> <%= link_to 'Standings', standings_url %></li>	
-	<li><%= link_to 'Contacts', contacts_url %></li>
-
-  </ul>
-
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</header>
-
-<body>
-
-<p><%= notice %></p>
-<p><%= alert %></p>
-
-<%= yield %>
-
-</body>
-
-<footer>
-	<% if user_signed_in? %>
-		<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-	<% else %>
-		<li><%= link_to'Sign In', sign_up_url %></a></li>
-	<% end %>
-</footer>
-</html>
--->
-<!-- CSS goes in the document HEAD or added to your external stylesheet -->
-<!--
-<style type="text/css">
-table.imagetable {
-	font-family: verdana,arial,sans-serif;
-	font-size:11px;
-	color:#333333;
-	border-width: 1px;
-	border-color: #999999;
-	border-collapse: collapse;
-}
-table.imagetable th {
-	background:#b5cfd2 url('cell-blue.jpg');
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #999999;
-}
-table.imagetable td {
-	background:#dcddc0 url('cell-grey.jpg');
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #999999;
-}
-</style>
--->
-
-<!-- Table goes in the document BODY -->
-<!--
-<table class="imagetable">
-<tr>
-	<th>Info Header 1</th><th>Info Header 2</th><th>Info Header 3</th>
-</tr>
-<tr>
-	<td>Text 1A</td><td>Text 1B</td><td>Text 1C</td>
-</tr>
-<tr>
-	<td>Text 2A</td><td>Text 2B</td><td>Text 2C</td>
-</tr>
-</table>
--->
