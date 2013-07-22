@@ -19,22 +19,15 @@
 
         <div class="span6">
         	<h4>Teams</h4>
-          	<% @teams.each do |team| %>
-          		<p><%= link_to "#{team.name}", team %> </p>
-          			<% team.users.each do |user| %>
+          	<% @seasonteams.each do |seasonteam| %>
+          		<p><%= link_to "#{seasonteam.team.name} ", seasonteam.team %> </p>
+          			<% seasonteam.users.each do |user| %>
           				<p><%= user.email %> </p>		
           			<% end %>
           	<% end %>
         </div>
 
-<!--
-        <div class="span6">
-          <h4>Players</h4>
-          	<% @users.each do |user| %>
-          		<p><%= user.email %> </p>
-          	<% end %>
-        </div>
--->
+
 	</div>
 	<hr>
 </div>

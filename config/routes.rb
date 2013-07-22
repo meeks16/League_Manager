@@ -8,13 +8,13 @@ LeagueManager::Application.routes.draw do
 
   root :to => 'teams#index'
   
-  resources :schedules
+  resources :matches
 
   resources :teams
   
   get 'home' => 'home#index'
   
-  get 'sched' => 'schedules#index'
+  get 'sched' => 'matches#index'
   
   get 'standings' => 'teams#index'
   
@@ -34,7 +34,5 @@ LeagueManager::Application.routes.draw do
   get 'seasons' => 'seasons#index'
   
   get 'seasons/:id' => 'seasons#show', :as => 'season'
-  
-  
   
 end

@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<h1>Schedule</h1>
+
+<body>
+
+<%= link_to 'View League Standings', teams_url %>
+
+<table border="1" cellpadding="8">
+<thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Court 1</th>
+    <th></th>
+    <th>Court 2</th>
+    <th></th>
+    
+    <% if user_signed_in? %>
+    	<th></th>
+    	<th></th>
+    	<th></th>
+    <% end %>
+  </tr>
+</thead>
+	<th>Date</th>
+    <th>Time</th>
+    <th>Home</th>
+    <th>Away</th>
+    <th>Home</th>
+    <th>Away</th>
+
+<thead>
+	
+</thead>
+
+<% @matches.each do |match| %>
+  <tr>
+    <td><%= match.date %></td>
+    <td><%= match.timeslot %></td>
+    <td><%= match.teamA %></td>
+    <td><%= match.teamB %></td>
+    <td><%= match.teamA %></td>
+    <td><%= match.teamB %></td>
+    <% if user_signed_in? %>
+    	<td><%= link_to 'Show', match %></td>
+    	<td><%= link_to 'Edit', edit_match_path(match) %></td>
+    	<td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+</body>
+</html>
+
+<br />
+
