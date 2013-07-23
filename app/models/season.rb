@@ -4,7 +4,7 @@ class Season < ActiveRecord::Base
   has_many :teams, through: :season_teams
   has_many :users, through: :season_team_users
   has_many :season_team_users, through: :season_teams
-  has_many :mathes
+  has_many :matches
   
   def generate_schedule
   	
