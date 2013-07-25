@@ -5,6 +5,5 @@ class Team < ActiveRecord::Base
   has_many :seasons, through: :season_teams
   has_many :users, through: :season_team_users
   has_many :season_team_users, through: :season_teams
-  has_many :matches, through :season_teams
   
 end

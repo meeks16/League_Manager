@@ -26,6 +26,20 @@
           			<% end %>
           	<% end %>
         </div>
+                
+        <div class="span6">
+        	<h4>Shedule</h4>
+          	<% @matches.each do |match| %>
+          		<p><%= match.home_team %> VS <%= match.away_team %></p>
+          			<% @seasonteams.each do |seasonteam| %>
+          				<% seasonteam.find(match.home_team).each do |home| %>
+          					<p><%= home.name%></p>
+          				<% end %>
+          			<% end %>
+          	<% end %>
+        </div>
+        
+
 
 
 	</div>
