@@ -7,12 +7,27 @@ class Season < ActiveRecord::Base
   has_many :matches
 
   def generate_schedule
+  
+  	
+  	count = 0
+  	
   	dateRange = Season.start..Season.end
   	daysOfweek = [2] 
   	datesPlayed = dateRange.to_a.select {|dp| daysOfweek.include?(dp.wday)}
   	dateCount = datesPlayed.count
   	
+  	datesPlayed.each do |matches|
+  		match = Match.new
+  		match.date = matches.select{|date| puts date}
+  		
+  		matchArray[count] = match
+  		count = count + 1
+  		
+  		if (count > dateCount)
+  			break 
+  		end
   	
+  	end
   	
   end
   
