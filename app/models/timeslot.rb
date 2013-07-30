@@ -3,4 +3,8 @@ class Timeslot < ActiveRecord::Base
   
   has_many :matches
   belongs_to :season
+  
+  def create_timeslot
+  	
+  end
 end

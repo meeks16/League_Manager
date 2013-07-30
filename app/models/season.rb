@@ -1,5 +1,6 @@
 class Season < ActiveRecord::Base
-  attr_accessible :end, :frequency, :name, :number_of_courts, :start, :league_name
+  attr_accessible :end, :frequency, :name, :number_of_courts, :start, :league_name, :number_of_timeslots
+  
   has_many :season_teams
   has_many :teams, through: :season_teams
   has_many :users, through: :season_team_users
@@ -23,25 +24,33 @@ class Season < ActiveRecord::Base
   	datesPlayed.each do |game_date|
   	
   		puts game_date
-#   		match = Match.create
-#   		match.date = game_date
+  		timeslotCount = self.number_of_timeslots
+  		timeslots = self.timeslots
   		
-#   		timeslot.each do |ts|
-#   			timeCount = ts.count
-#   			ts.create
-#   			
-#   			court.each do |c|
-#   				courtCount = c.count
-#   				c.create
-#   				if (count > courtCount)
-#   			end
-#   			
-#   			if (count > timeCount)
-#   				break 
-#   			end
-#   		end
+  		timeslots.each do |ts|
   		
-#   		dateArray[count] = match
+  			puts ts.name
+  			courtCount = self.number_of_courts
+  			court = self.matches
+  			
+  			court.each do |match|
+  			
+  				mat = Match.new
+  				mat.date = match.game_date
+  				mat.timeslot = ts.name
+
+  				
+  				if (count > courtCount)
+  					break
+  				end
+  			end
+  			
+  			if (count > timeslotCount)
+  				break 
+  			end
+  		end
+  		
+#   		dateArray[count] = mat
   		count = count + 1
   		
   		if (count > dateCount)
