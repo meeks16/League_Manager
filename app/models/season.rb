@@ -5,22 +5,43 @@ class Season < ActiveRecord::Base
   has_many :users, through: :season_team_users
   has_many :season_team_users, through: :season_teams
   has_many :matches
+  has_many :timeslots
 
+  
+
+  require 'date'
+  
   def generate_schedule
   
-  	
+  	dateArray = Array.new
   	count = 0
-  	
-  	dateRange = Season.start..Season.end
-  	daysOfweek = [2] 
+  	dateRange = (self.start..self.end)
+  	daysOfweek = [2]
   	datesPlayed = dateRange.to_a.select {|dp| daysOfweek.include?(dp.wday)}
   	dateCount = datesPlayed.count
   	
-  	datesPlayed.each do |matches|
-  		match = Match.new
-  		match.date = matches.select{|date| puts date}
+  	datesPlayed.each do |game_date|
+  	
+  		puts game_date
+#   		match = Match.create
+#   		match.date = game_date
   		
-  		matchArray[count] = match
+#   		timeslot.each do |ts|
+#   			timeCount = ts.count
+#   			ts.create
+#   			
+#   			court.each do |c|
+#   				courtCount = c.count
+#   				c.create
+#   				if (count > courtCount)
+#   			end
+#   			
+#   			if (count > timeCount)
+#   				break 
+#   			end
+#   		end
+  		
+#   		dateArray[count] = match
   		count = count + 1
   		
   		if (count > dateCount)

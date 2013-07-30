@@ -6,6 +6,6 @@ class Match < ActiveRecord::Base
   belongs_to :season_home_team, :foreign_key => "season_home_team_id", :class_name => "SeasonTeam"
   belongs_to :season_away_team, :foreign_key => "season_away_team_id", :class_name => "SeasonTeam"
   has_many :games
-  has_many :timeslots
+  has_one :timeslots
   
 end
