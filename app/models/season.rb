@@ -12,8 +12,20 @@ class Season < ActiveRecord::Base
 
   require 'date'
   
-  def days_of_week
-
+  def rotate_teams
+  
+   	dateRange = (self.start..self.end)
+  	daysOfweek = [Date::DAYNAMES.index(self.frequency)]
+  	datesPlayed = dateRange.to_a.select {|dp| daysOfweek.include?(dp.wday)}
+  	
+  	datesPlayed.each do |game_date|
+  	
+	  	teams = self.season_teams
+	  	id = teams.map {|x| x.team_id}
+	  	rotate = id.push id.shift
+	  	
+		return rotate
+ 	end
   end
   
   def say_hello(name)
