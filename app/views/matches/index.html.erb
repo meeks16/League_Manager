@@ -15,40 +15,23 @@
 
 <table border="1" cellpadding="8">
 <thead>
-  <tr>
-    <th></th>
-    <th></th>
-    <th>Court 1</th>
-    <th></th>
-    <th>Court 2</th>
-    <th></th>
-    
-    <% if user_signed_in? %>
-    	<th></th>
-    	<th></th>
-    	<th></th>
-    <% end %>
-  </tr>
-</thead>
+
 	<th>Date</th>
     <th>Time</th>
-    <th>Home</th>
-    <th>Away</th>
+    <th>Court</th>
     <th>Home</th>
     <th>Away</th>
 
-<thead>
 	
 </thead>
 
 <% @matches.each do |match| %>
   <tr>
     <td><%= match.date %></td>
-    <td><%= match.timeslot %></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><%= match.timeslot.name%></td>
+    <td><%= match.court%></td>
+    <td><%= %></td>
+    <td><%= %></td>
     <% if user_signed_in? %>
     	<td><%= link_to 'Show', match %></td>
     	<td><%= link_to 'Edit', edit_match_path(match) %></td>
