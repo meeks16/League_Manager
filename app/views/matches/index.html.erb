@@ -7,41 +7,56 @@
   <%= csrf_meta_tags %>
 </head>
 
-<h1>Schedule</h1>
+<p id="notice"><%= notice %></p>
 
-<body>
+      <div class="masthead">
+        <ul class="nav nav-pills pull-left">
+        	<li><%= link_to 'Home', season_url %></li>
+        	<li><%= link_to 'Standings', standings_url %></li>
+        	<li><%= link_to 'Schedule', schedule_url %></li>
+        </ul>
+      </div>
 
-<%= link_to 'View League Standings', teams_url %>
 
-<table border="1" cellpadding="8">
-<thead>
+<div class="container-wide">
 
-	<th>Date</th>
-    <th>Time</th>
-    <th>Court</th>
-    <th>Home</th>
-    <th>Away</th>
-
+	<hr>
 	
-</thead>
+	<div class="jumbotron">
+		<h1>Schedule</h1>
+	</div>
+	
+	<hr>
 
-<% @matches.each do |match| %>
-  <tr>
-    <td><%= match.date %></td>
-    <td><%= match.timeslot.name%></td>
-    <td><%= match.court%></td>
-    <td><%= %></td>
-    <td><%= %></td>
-    <% if user_signed_in? %>
-    	<td><%= link_to 'Show', match %></td>
-    	<td><%= link_to 'Edit', edit_match_path(match) %></td>
-    	<td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-</body>
+	<div class="row-fluid marketing">
+		<table border="1" cellpadding="8">
+			<thead>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Court</th>
+				<th>Home</th>
+				<th>Away</th>
+			</thead>
+
+			<% @matches.each do |match| %>
+			<tr>
+				
+				<td><%= match.date.strftime("%m/%d/%Y") %></td>
+				<td><%= match.timeslot.name%></td>
+				<td><%= match.court%></td>
+				<td><%= match.season_home_team.team.name %></td>
+				<td><%= match.season_away_team.team.name %></td>
+				<% if user_signed_in? %>
+					<td><%= link_to 'Show', match %></td>
+					<td><%= link_to 'Edit', edit_match_path(match) %></td>
+					<td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
+
 </html>
 
-<br />
 

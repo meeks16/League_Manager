@@ -5,6 +5,7 @@
 	<h1>Serve it Up!</h1>
 	<!-- <p>Volleyball Legues</p> -->
 	<p class="lead"><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
+	<a class="btn btn-large btn-success" <%= link_to "Create a Season", new_season_url %> </a>
 </div>
 <hr>
 	<div class="row-fluid marketing">

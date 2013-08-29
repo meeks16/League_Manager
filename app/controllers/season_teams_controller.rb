@@ -1,31 +1,31 @@
-class TeamsController < ApplicationController
-  # GET /teams
-  # GET /teams.json
-  def index
-    @teams = Team.all
+class SeasonTeamsController < ApplicationController
+
+  def standing
+#   	@seaon_team = SeasonTeam.all
+  	@season = Season.find(params[:id])
+    @season_teams = @season.season_teams
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @teams }
+      format.json { render json: @season_teams }
     end
   end
+  
 
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @team = Team.find(params[:id])
-    @users = @team.users.uniq{|user| user.id}
-    @teams = Team.all
-    @season_team = @team.season_teams.first
+  
+    @season_team = SeasonTeam.find(params[:id])
+    @users = @season_team.users.uniq{|user| user.id}
+#     @season_teams = SeaonTeam.all
     @hmatch = @season_team.home_matches
     @amatch = @season_team.away_matches
     @matches = @hmatch | @amatch
-    
-#     @teams = @season.teams.uniq{|team| team.id}
-#     @users = @season.users.uniq{|user| user.id}
+
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @team }
+      format.json { render json: @season_team }
     end
   end
 

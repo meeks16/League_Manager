@@ -1,4 +1,4 @@
-
+<html>
 <head>
   <title>league Manager</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -7,7 +7,7 @@
 </head>
 
 <p id="notice"><%= notice %></p>
-
+    
 <div class="masthead">
 	<ul class="nav nav-pills pull-left">
     	<li><%= link_to 'Home', season_url %></li>
@@ -15,22 +15,17 @@
         <li><%= link_to 'Schedule', schedule_url %></li>
     </ul>
 </div>
-
+      
 <div class="container-wide">
 	<hr>
 	<div class="jumbotron">
-		<h1> <%= @team.name %> </h1>
-		<p class="lead">Record:(<%= @team.wins%>W-<%=@team.losses%>L)</p>
+		<h1> <%= @season_team.team.name %> </h1>
+		<p class="lead">Record:(<%= @season_team.team.wins%>W-<%=@season_team.team.losses%>L)</p>
 	</div>
 
 	<hr>
 	<div class="row-fluid marketing">
-    	<div class="span6">
-    		<h4><%= link_to 'Teams', teams_path %></h4>
-    		<% @teams.each do |team| %>
-        		<p><%= link_to "#{team.name}", team %> </p>
-        	<% end %>
-        </div>
+
 
         <div class="span6">
     		<h4>Players</h4>
@@ -61,7 +56,6 @@
 						<td><%= match.court%></td>
 						
 						<td><%= match.season_away_team.team.name %></td>
-
 					</tr>
 				<% end %>
 				
@@ -71,9 +65,7 @@
 	</div>
 
         
-<!-- <%= link_to 'Edit', edit_team_path(@team) %> | -->
 <%= link_to 'Back to League', seasons_path %>
 	<hr>
 </div>
-
-
+</html>

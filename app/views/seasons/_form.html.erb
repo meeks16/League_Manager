@@ -16,19 +16,19 @@
     <%= f.text_field :league_name %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :season %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :start %><br />
+    <%= f.label :start_date  %><br />
     <%= f.date_select :start %>
   </div>
   <div class="field">
-    <%= f.label :end %><br />
+    <%= f.label :end_date %><br />
     <%= f.date_select :end %>
   </div>
   <div class="field">
-    <%= f.label :frequency %><br />
+    <%= f.label :day_of_week %><br />
     <%= f.text_field :frequency %>
   </div>
     <div class="field">
@@ -37,5 +37,6 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+
   </div>
 <% end %>

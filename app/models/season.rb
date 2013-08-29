@@ -13,6 +13,8 @@ class Season < ActiveRecord::Base
   require 'date'
   
   def rotate(season_team_ids)
+
+  	
   	fixed_team = season_team_ids.shift
   	rotated_season_team_ids = season_team_ids.rotate(-1)
   	new_season_team_ids = rotated_season_team_ids.unshift(fixed_team)
@@ -20,6 +22,7 @@ class Season < ActiveRecord::Base
   	new_season_team_ids
   	
   end
+
   
   def get_season_team_ids
   	s_teams = self.season_teams
@@ -29,7 +32,12 @@ class Season < ActiveRecord::Base
   	
   end
   
+  def get_combination(season_team_ids)
   
+  	matchup_combos = season_team_ids.combination(2).to_a
+  	matchup_combos
+  	
+  end
   
   def split_teams(season_team_ids)
   	season_team_id_count = season_team_ids.count
@@ -42,78 +50,95 @@ class Season < ActiveRecord::Base
   
   
   def get_pairs(splited_teams)
+  
   	home_teams = splited_teams.first
   	away_teams = splited_teams.last.reverse!
   	match_count = home_teams.count - 1
   	range = (0..match_count)
-  	
   	pairs = []
-  	range.each do |r| matches.push( [home_teams[r], away_teams[r]] )
+  	
+  	range.each do |r| pairs.push( [home_teams[r], away_teams[r]] )
+  	
   	end
   	
   	pairs
   
   end
   
-  def get_matchups(season_team_ids)
-  	# number of iterations till match_upslots are filled
-  	# get_season_team_ids() the second time must get ther new array not the self.season_teams
-  	# Assign these matchups for home and away season_teams.
-  	# number of total matches.
+  def get_matchups(season_team_ids)	
+     	
+   	teams_splitted = self.split_teams(season_team_ids)
+  	matchups = self.get_pairs(teams_splitted)
+  	matchups
   	
   end
-  def rotate_teams
   
-   	dateRange = (self.start..self.end)
-  	daysOfweek = [Date::DAYNAMES.index(self.frequency)]
-  	datesPlayed = dateRange.to_a.select {|dp| daysOfweek.include?(dp.wday)}
-  	teams = self.season_teams
-  	id = teams.map {|x| x.team_id}
-  	rotate = id.push id.shift
-  	
-  	datesPlayed.each do |game_date|
-  		newArray.rotate
-  		teamArray = Array.new
-  		
-	  	teamArray.each do |t|
-	  		
-	  	end
-	  	
-	  	
-# 	  	rotate.each do ||
-		return rotate
- 	end
-  end
-  
-  def say_hello
-  	s_teams = self.season_teams
-  	s_team_count = season_teams.count
-  	s_team_array = s_teams.each_slice(s_team_count / 2).to_a
-  	home_array = Array.new(s_team_array.first)  #(s_team_count / 2) {|h| h = }
-   	away_array = Array.new(s_team_array.last)
-   	away_arrayr = away_array.reverse!
-  
-#  	return away_array
- 	return away_arrayr
-  end
-  def create_match
+  def get_all_matchups
+    	
   	total_match_count = self.matches.count
 	season_team_count = self.season_teams.count
-	matches_per_season_team = total_match_count / season_team_count
-	count = 0
-	match = Match.all	
-	
-		match.each do |m|	
-			matchup = m.create
-			matchup = 
-			
-			count = count + 1
+	count = season_team_count / 2
+	rotation_count = total_match_count / count
+	pairsArray = Array.new
+	season_team_ids = self.get_season_team_ids
+	range = (1..rotation_count)
 
- 			if (count > matches_per_season_team)
-				break
-			end
-		end
+	range.each do |r|
+	   	season_team_ids = self.rotate(season_team_ids)
+	   	matchups = self.get_matchups(season_team_ids)
+	   	pairsArray.push(matchups)
+	end
+	
+	matchups = pairsArray.flatten(1)
+	matchups
+
   end
+  
+  def randomize
+  	
+  	timeslot_count = self.timeslots.count
+  	court_count = self.number_of_courts
+  	count = timeslot_count * court_count
+  	randomizedArray = Array.new
+  
+  end
+  
+  def sample_random(sample_array)
+  	count = sample_array.count / 4
+  	y = Array.new
+  	range = (1..count)
+  	
+  	range.each do |r|
+  		
+  	end
+  	
+#   	sample_array.take(4)
+  	
+  end
+  
+  def assign_teams
+    timeslot_count = self.timeslots.count
+  	court_count = self.number_of_courts
+  	mymatches = self.matches.clone
+  	matchups = self.get_all_matchups
+  	match_per_day = timeslot_count * court_count
+  	
+  	while !mymatches.empty? 
+  		matches_for_day = mymatches.shift(match_per_day).shuffle
+  		matchups_for_day = matchups.shift(match_per_day)
+  	
+  		matches_for_day.each_index do |i|
+  	
+  			matches_for_day[i].season_home_team_id = matchups_for_day[i].first
+  			matches_for_day[i].season_away_team_id = matchups_for_day[i].last
+  			puts "#{matches_for_day[i].date}, #{matches_for_day[i].timeslot}, #{matches_for_day[i].court}, #{matches_for_day[i].season_away_team_id}, #{matches_for_day[i].season_home_team_id}"
+  			matches_for_day[i].save
+  		end
+   	
+   	end
+   	
+  end
+  
   def generate_schedule
   
   	dateRange = (self.start..self.end)
@@ -130,19 +155,15 @@ class Season < ActiveRecord::Base
   			courtArray = courts.map{|c| "Court" + c.to_s}
   			
   			courts.each do |c|
-  			
-  				puts "#{c}, #{ts.name}, #{game_date}"
+  				#puts self.id
+   				puts "season: #{self.id} court:#{c}, ts:#{ts.name}, gamedate:#{game_date}"
   				Match.create {|m| m.date = game_date, m.timeslot_id = ts.id, m.court = c, m.season_id = self.id}
-  				
-#   				matchArray.each do |m|
-#   				
-#   					m.date = game_date
-#   					m.timeslot = ts.name
-#   					m.court = c 
-  					
+
   			end
   		end  	
   	end  	
   end 
+  
+  
   
 end

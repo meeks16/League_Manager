@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<p id="notice"><%= notice %></p>
+    
+      <div class="masthead">
+        <ul class="nav nav-pills pull-left">
+        	<li><%= link_to 'Home', season_url %></li>
+        	<li><%= link_to 'Standings', standings_url %></li>
+        	<li><%= link_to 'Schedule', schedule_url %></li>
+        </ul>
+      </div>
+
+
+<div class="container-wide">
+
+	<hr>
+	<div class="jumbotron">
+		<h1>Standings</h1>
+	</div>
+	</hr>
+	
+	<div class="row-fluid marketing">
+		<div class="span6">
+			<table>
+
+				<thead>
+					<tr>
+						<th>Teams</th>
+						<th>Sets Played</th>
+						<th>Sets Won</th>
+						<th>Sets loss</th>
+						<% if user_signed_in? %>
+							<th></th>
+							<th></th>
+						<% end %>
+					</tr>
+				</thead>
+				
+				<tbody>
+				<% @season_teams.each do |seasonteam| %>
+					<tr>
+          				<td><%= link_to "#{seasonteam.team.name} ", seasonteam.team %> </td>
+          				<td><%= seasonteam.team.sets_played %></td>
+          				<td><%= seasonteam.team.wins %></td>
+          				<td><%= seasonteam.team.losses %></td>
+					</tr>
+          		<% end %>
+				</tbody>
+			</table>	
+		</div>
+	</div>
+</div>
+</html>
+

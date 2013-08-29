@@ -2,15 +2,16 @@ class MatchesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-    @matches = Match.all
-#     @season = Season.find_by_id(params[:id])
+  	@season = Season.find(params[:id])
+    @matches = @season.matches
 #     @seasonteams = @season.season_teams
 #     @teams = @season.teams.uniq{|team| team.id}
 #     @users = @season.users.uniq{|user| user.id}
+    @seasons = Season.all
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @matches }
+      format.json { render json: @seasons }
     end
   end
 

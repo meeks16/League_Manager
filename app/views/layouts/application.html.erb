@@ -48,18 +48,18 @@
 <body>
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><%= link_to 'Home', home_url %></li>
           <li><%= link_to 'Seasons', seasons_url %></li>
-          <li><%= link_to 'Teams', teams_url %></li>
           <li><%= link_to 'Contact', contacts_url %></li>
         </ul>
-        <h3 class="muted">Ultimate League Experience</h3>
+        <h3 class="muted"><%=link_to 'Ultimate League Experience', home_url %></h3>
       </div>
 
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 
 <%= yield %>
+
+
     <footer>
     	<% if user_signed_in? %>
         	<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
