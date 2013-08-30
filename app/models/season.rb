@@ -40,7 +40,14 @@ class Season < ActiveRecord::Base
   end
   
   def split_teams(season_team_ids)
+    	
+    if season_team_ids.count.odd? then
+    
+      		season_team_ids = season_team_ids.push(0)  		
+  	end
+
   	season_team_id_count = season_team_ids.count
+  	
   	range = season_team_id_count / 2
   	teams_splited = season_team_ids.each_slice(range).to_a
   	
@@ -103,18 +110,7 @@ class Season < ActiveRecord::Base
   
   end
   
-  def sample_random(sample_array)
-  	count = sample_array.count / 4
-  	y = Array.new
-  	range = (1..count)
-  	
-  	range.each do |r|
-  		
-  	end
-  	
-#   	sample_array.take(4)
-  	
-  end
+
   
   def assign_teams
     timeslot_count = self.timeslots.count
