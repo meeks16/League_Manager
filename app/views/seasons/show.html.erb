@@ -9,6 +9,7 @@
 
 <p id="notice"><%= notice %></p>
     
+<!--
       <div class="masthead">
         <ul class="nav nav-pills pull-left">
         	<li><%= link_to 'Home', season_url %></li>
@@ -16,6 +17,7 @@
         	<li><%= link_to 'Schedule', schedule_url %></li>
         </ul>
       </div>
+-->
 
 
 <div class="container-wide">
@@ -26,34 +28,41 @@
 
 		<p class="lead"><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
 	</div>
+	
 	<hr>
+	
 	<div class="row-fluid marketing">
-		<div class="span6">
+	
+        <div class="span7">
 		
-        	<h4><%= link_to "Shedule", schedule_url %></h4>
-        	<% @matches.each do |match| %>
-        	<p> <%= match.date.strftime("%m/%d/%Y") %> </p>
+<!--         	<h4><%= link_to "Shedule", schedule_url %></h4> -->
+        	<h4>Schedule</h4>
         	<table border="1" cellpadding="8">
 	        	<thead>
+	        		<th>Date</th>
 		        	<th>Time</th>
 		        	<th>Court</th>
 		        	<th>Home</th>
 		        	<th>Away</th>	
 		        </thead>
-
+		        
+		        <tbody>
+		        <% @matches.each do |match| %>
 		        <tr>
+		        	<td><%= match.date.strftime("%m/%d/%Y")%></td>
 			        <td><%= match.timeslot.name%></td>
 			        <td><%= match.court%></td>
-			        <td><%= match.season_home_team.team.name %></td>
-			        <td><%= match.season_away_team.team.name %></td>
+			        <td><%= match.display_home_team_name %></td>
+			        <td><%= match.display_away_team_name %></td>
 			    </tr>
 			    <% end %>
+			    </tbody>
 			</table>
 			
         </div>
-        
-		<div class="span6">
-			<h4><%= link_to "Standings", standings_url %></h4>
+		<div class="span5">
+<!-- 			<h4><%= link_to "Standings", standings_url %></h4> -->
+			<h4>Standings</h4>
 			<table>
 
 				<thead>
@@ -72,7 +81,8 @@
 				<tbody>
 				<% @seasonteams.each do |seasonteam| %>
 					<tr>
-          				<td><%= link_to "#{seasonteam.team.name} ", seasonteam %> </td>
+          				<!-- <td><%= link_to "#{seasonteam.team.name} ", [seasonteam.season, seasonteam] %> </td> -->
+          				<td><%= seasonteam.team.name %></td>
           				<td><%= seasonteam.team.wins %></td>
           				<td><%= seasonteam.team.losses %></td>
 					</tr>
@@ -80,7 +90,10 @@
 				</tbody>
 			</table>	
 		</div>
+		
 
+
+<!--
         <div class="span6">
         	<h4>Teams</h4>
           	<% @seasonteams.each do |seasonteam| %>
@@ -90,6 +103,8 @@
           			<% end %>
           	<% end %>
         </div>
+-->
+        
 	</div>
 	<hr>
 </div>

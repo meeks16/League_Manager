@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802194037) do
+ActiveRecord::Schema.define(:version => 20130904211407) do
 
   create_table "games", :force => true do |t|
     t.integer  "match_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130802194037) do
     t.integer  "season_id"
     t.integer  "season_home_team_id"
     t.integer  "season_away_team_id"
+    t.integer  "game_id"
   end
 
   create_table "season_team_users", :force => true do |t|

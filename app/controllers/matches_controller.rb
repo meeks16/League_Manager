@@ -18,6 +18,8 @@ class MatchesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
+#   	@season = Season.find(params[:id])
+#   	@matches = @season.matches
     @match = Match.find(params[:id])
 
     respond_to do |format|

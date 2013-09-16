@@ -23,11 +23,14 @@
 	<hr>
 	<div class="jumbotron">
 		<h1>Standings</h1>
+		<p class="lead"><%= "#{@season.name} #{@season.end.strftime('%Y')}" %></p>
 	</div>
-	</hr>
+	
+	<hr>
 	
 	<div class="row-fluid marketing">
 		<div class="span6">
+
 			<table>
 
 				<thead>
@@ -55,7 +58,9 @@
 				</tbody>
 			</table>	
 		</div>
+		
 	</div>
+	<hr>
 </div>
 </html>
 

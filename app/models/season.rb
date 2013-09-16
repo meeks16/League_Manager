@@ -41,10 +41,7 @@ class Season < ActiveRecord::Base
   
   def split_teams(season_team_ids)
     	
-    if season_team_ids.count.odd? then
-    
-      		season_team_ids = season_team_ids.push(0)  		
-  	end
+
 
   	season_team_id_count = season_team_ids.count
   	
@@ -84,10 +81,17 @@ class Season < ActiveRecord::Base
     	
   	total_match_count = self.matches.count
 	season_team_count = self.season_teams.count
+	if season_team_count.odd?
+		season_team_count = season_team_count + 1
+	end
 	count = season_team_count / 2
 	rotation_count = total_match_count / count
 	pairsArray = Array.new
 	season_team_ids = self.get_season_team_ids
+	if season_team_ids.count.odd? then
+    
+      		season_team_ids = season_team_ids.push(0)  		
+  	end
 	range = (1..rotation_count)
 
 	range.each do |r|
@@ -120,13 +124,25 @@ class Season < ActiveRecord::Base
   	match_per_day = timeslot_count * court_count
   	
   	while !mymatches.empty? 
-  		matches_for_day = mymatches.shift(match_per_day).shuffle
+#   		matches_for_day = mymatches.shift(match_per_day).shuffle
+  		matches_for_day = mymatches.shift(match_per_day)
   		matchups_for_day = matchups.shift(match_per_day)
   	
   		matches_for_day.each_index do |i|
-  	
-  			matches_for_day[i].season_home_team_id = matchups_for_day[i].first
-  			matches_for_day[i].season_away_team_id = matchups_for_day[i].last
+	  		if matchups_for_day[i].first > 0
+	  			matches_for_day[i].season_home_team_id = matchups_for_day[i].first
+	  		else
+	  			matches_for_day[i].season_home_team_id = nil
+	  		end
+	  		
+	  		if matchups_for_day[i].last > 0
+	  			matches_for_day[i].season_away_team_id = matchups_for_day[i].last
+	  		else
+	  			matches_for_day[i].season_away_team_id = nil
+	  		end
+	  		
+#   			matches_for_day[i].season_home_team_id = matchups_for_day[i].first
+#   			matches_for_day[i].season_away_team_id = matchups_for_day[i].last
   			puts "#{matches_for_day[i].date}, #{matches_for_day[i].timeslot}, #{matches_for_day[i].court}, #{matches_for_day[i].season_away_team_id}, #{matches_for_day[i].season_home_team_id}"
   			matches_for_day[i].save
   		end
@@ -151,10 +167,9 @@ class Season < ActiveRecord::Base
   			courtArray = courts.map{|c| "Court" + c.to_s}
   			
   			courts.each do |c|
-  				#puts self.id
-   				puts "season: #{self.id} court:#{c}, ts:#{ts.name}, gamedate:#{game_date}"
-  				Match.create {|m| m.date = game_date, m.timeslot_id = ts.id, m.court = c, m.season_id = self.id}
-
+#    				puts "season: #{self.id} court:#{c}, ts:#{ts.name}, gamedate:#{game_date}"
+  				Match.create {|m| m.date = game_date, m.timeslot_id = ts.id, m.court = c, m.season_id = self.id }
+  				
   			end
   		end  	
   	end  	

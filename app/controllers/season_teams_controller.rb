@@ -1,5 +1,6 @@
 class SeasonTeamsController < ApplicationController
 
+
   def standing
 #   	@seaon_team = SeasonTeam.all
   	@season = Season.find(params[:id])
@@ -7,7 +8,7 @@ class SeasonTeamsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @season_teams }
+      format.json { render :json => @season_teams }
     end
   end
   
@@ -15,8 +16,9 @@ class SeasonTeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-  
+  	
     @season_team = SeasonTeam.find(params[:id])
+    @season = @season_team.season
     @users = @season_team.users.uniq{|user| user.id}
 #     @season_teams = SeaonTeam.all
     @hmatch = @season_team.home_matches

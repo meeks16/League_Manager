@@ -6,4 +6,5 @@ class SeasonTeam < ActiveRecord::Base
   has_many :away_matches, :foreign_key => "season_away_team_id", :class_name => "Match"
   has_many :season_team_users
   has_many :users, through: :season_team_users
+  has_many :games, through: :matches
 end

@@ -43,17 +43,10 @@ class SeasonsController < ApplicationController
   def show
     @season = Season.find_by_id(params[:id])
     @seasonteams = @season.season_teams
+    @seasonteam = @seasonteams.find_by_id(params[:id])
     @matches = @season.matches.uniq{|match| match.id}
-#     @home_teams = @season.matches{|team1| team1.home_team}
-#     @away_teams = @season.matches{|team2| team2.away_team}
-#     @home_team = @seasonteams.find_by_id(@matches.home_team)
-#     @away_team = @seasonteams.find_by_id(@matches.away_team)
     @teams = @season.teams.uniq{|team| team.id}
     @users = @season.users.uniq{|user| user.id}
-    
-#     @seasonteam = @teams.season_teams.map{|seasonteam| seasonteam.id}
-#     @users = @seasonteam.users
-
 
     @seasons = Season.all
 

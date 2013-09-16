@@ -9,4 +9,7 @@ class HomeController < ApplicationController
   def show
   	@season = Season.find(params[:id])
   end
+  
+  def contact
+  end
 end

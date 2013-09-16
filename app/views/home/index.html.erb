@@ -1,5 +1,15 @@
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
 
-<div class="container-narrow">
+<p id="notice"><%= notice %></p>
+    
+
+
+<div class="container-wide">
 <hr>
 <div class="jumbotron">
 	<h1>Serve it Up!</h1>
@@ -9,28 +19,43 @@
 </div>
 <hr>
 	<div class="row-fluid marketing">
-        <div class="span6">
-          <h4>Seasons</h4>
-          	<% @seasons.each do |stable| %>
-          		<p><%= link_to "#{stable.league_name} #{stable.name}", stable %> </p>
-          		<p><%= "#{stable.start} - #{stable.end}"%> </p>
-          	<% end %>
+        <div class="span12">
+			<table>
+			
+			<thead>
+			  <tr>
+			  	<th>League</th>
+			    <th>Season</th>
+			    <th>Start Date</th>
+			    <th>End Date</th>
+			    <th>Day of week</th>
+			    <th>Number of Courts</th>
+			<!--
+			    <% if user_signed_in? %>
+			    	<th></th>
+			    	<th></th>
+			    <% end %>
+			-->
+			
+			  </tr>
+			</thead>
+			
+			<tbody>
+			<% @seasons.each do |season| %>
+			  <tr>
+			  	<td><%= link_to season.league_name, season %></td>
+			    <td><%= season.name %></td>
+			    <td><%= season.start %></td>
+			    <td><%= season.end %></td>
+			    <td><%= season.frequency %></td>
+			    <td><%= season.number_of_courts %></td>
+			
+			  </tr>
+			<% end %>
+			</tbody>
+			 
+			</table>
         </div>
-        
-        <div class="span6">
-          <h4>Teams</h4>
-          	<% @teams.each do |team| %>
-          		<p><%= team.name %> </p>
-          	<% end %>
-        </div>
-
-        <div class="span6">
-          <h4>Players</h4>
-          	<% @users.each do |user| %>
-          		<p><%= user.email %></p>	
-          	<% end %>
-        </div>
-    <div>
 <hr>
 </div>
 

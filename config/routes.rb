@@ -8,9 +8,11 @@ LeagueManager::Application.routes.draw do
 
   root :to => 'teams#index'
   
+  
   resources :matches
 
   resources :teams
+  
   
   get 'home' => 'home#index'
   
@@ -18,7 +20,7 @@ LeagueManager::Application.routes.draw do
   
   get 'standings' => 'teams#index'
   
-  get 'contacts' => 'temps#contact'
+  get 'contacts' => 'home#contact'
     
   
 #   delete 'lines/:id', :controller => 'lines', :action => 'destroy', :as => 'train_line'
@@ -37,8 +39,9 @@ LeagueManager::Application.routes.draw do
   
   get 'seasons/:id/standings' => 'season_teams#standing', :as => 'standings'
   
-  get 'seasons/:id/seasonteams/:id' => 'season_teams#show', :as => 'season_team'
+  get 'seasons/:season_id/season_teams/:id' => 'season_teams#show', :as => 'season_season_team'
   
   get 'seasons/:id/schedule' => 'matches#index', :as => 'schedule'
   
+  get 'seasons/:id/schedule/match' => 'matches#show', :as => 'match'
 end

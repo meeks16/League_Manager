@@ -2,34 +2,71 @@
 
 <p>
   <b>Date</b>
-  <%= @match.date %>
+  <%= @match.date.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
   <b>Time</b>
-  <%= @match.timeslot %>
+  <%= @match.timeslot.name %>
 </p>
 
-<p>
-  <b>Away</b>
-  <%= @match.teamA %>
-</p>
+<hr>
+	<div class="row-fluid marketing">
+        <div class="span12">
+			<table>
+			
+			<thead>
+			  <tr>
+			  	<th>Team</th>
+			    <th>Game 1</th>
+			    <th>Game 2</th>
+			    <th>Game 3</th>
+			    <th>Games Won</th>
+			<!--
+			    <% if user_signed_in? %>
+			    	<th></th>
+			    	<th></th>
+			    <% end %>
+			-->
+			
+			  </tr>
+			  <tr>
+			  	<td><%= @match.season_home_team.team.name %></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			
+			  </tr>
+			  
+			  <tr>
+			  	<td><%= @match.season_away_team.team.name %></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			
+			  </tr>
+			  
+			</thead>
 
+			 
+			</table>
+        </div>
+	</div>
+<!--
 <p>
   <b>Home</b>
-  <%= @match.teamB %>
+  <%= @match.season_home_team.team.name %>
 </p>
 
 <p>
   <b>Away</b>
-  <%= @match.teamA %>
+  <%= @match.season_away_team.team.name %>
 </p>
+-->
 
-<p>
-  <b>Away</b>
-  <%= @match.teamB %>
-</p>
 
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
-<%= link_to 'Back', matches_path %>
+<%= link_to 'Back', schedule_path %>
