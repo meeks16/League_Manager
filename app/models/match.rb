@@ -32,6 +32,16 @@ class Match < ActiveRecord::Base
   	away_team
   end
   
+  def display_opponent
+  	if self.season_home_team
+  		opponent = self.season_away_team.team.name
+  	else if self.season_away_team
+  			opponent = self.season_home_team.team.name
+  		end
+  	end
+  	opponent
+  	
+  end
 #   def display_opponent
 #   
 # 	if self.season_home_team.nil?
