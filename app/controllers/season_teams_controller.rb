@@ -20,7 +20,6 @@ class SeasonTeamsController < ApplicationController
     @season_team = SeasonTeam.find(params[:id])
     @season = @season_team.season
     @users = @season_team.users.uniq{|user| user.id}
-#     @season_teams = SeaonTeam.all
     @hmatch = @season_team.home_matches
     @amatch = @season_team.away_matches
     @matches = @hmatch | @amatch

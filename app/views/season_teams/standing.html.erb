@@ -47,9 +47,10 @@
 				</thead>
 				
 				<tbody>
-				<% @season_teams.each do |seasonteam| %>
+				<% seasonteams = @season_teams.sort_by! {|st|st.team.wins}%>
+				<% seasonteams.reverse.each do |seasonteam| %>
 					<tr>
-          				<td><%= link_to "#{seasonteam.team.name} ", seasonteam.team %> </td>
+          				<td><%= link_to "#{seasonteam.team.name} ", [seasonteam.season, seasonteam] %> </td>
           				<td><%= seasonteam.team.sets_played %></td>
           				<td><%= seasonteam.team.wins %></td>
           				<td><%= seasonteam.team.losses %></td>

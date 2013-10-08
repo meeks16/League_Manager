@@ -9,7 +9,13 @@
 
 <p id="notice"><%= notice %></p>
     
-
+      <div class="masthead">
+        <ul class="nav nav-pills pull-left">
+        	<li><%= link_to 'Home', season_url %></li>
+        	<li><%= link_to 'Standings', standings_url %></li>
+        	<li><%= link_to 'Schedule', schedule_url %></li>
+        </ul>
+      </div>
 
 
 <div class="container-wide">
@@ -27,7 +33,7 @@
 	
         <div class="span7">
 		
-        	<h4>Schedule</h4>
+        	<h4><%= link_to "Schedule", schedule_url %></h4>
         	<table border="1" cellpadding="8">
 	        	<thead>
 	        		<th>Date</th>
@@ -52,7 +58,7 @@
 			
         </div>
 		<div class="span5">
-			<h4>Standings</h4>
+			<h4><%= link_to "Standings", standings_url %></h4>
 			<table>
 
 				<thead>
@@ -72,7 +78,7 @@
 				<% seasonteams = @seasonteams.sort_by! {|st|st.team.wins}%>
 				<% seasonteams.reverse.each do |seasonteam| %>
 					<tr>
-          				<td><%= seasonteam.team.name%> </td>
+          				<td><%= link_to "#{seasonteam.team.name} ", [seasonteam.season, seasonteam] %> </td>
           				<td><%= seasonteam.team.wins %></td>
           				<td><%= seasonteam.team.losses %></td>
 					</tr>

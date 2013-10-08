@@ -44,7 +44,7 @@
 			<tr>
 				<td><%= match.date.strftime("%m/%d/%Y") %></td>
 				<td><%= match.timeslot.name%></td>
-				<td><%= link_to "#{match.court}", match %></td>
+				<td><%= match.court %></td>
 				<td><%= match.display_home_team_name %></td>
 				<td><%= match.display_away_team_name %></td>
 				<% if user_signed_in? %>
