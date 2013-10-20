@@ -1,5 +1,5 @@
 class SeasonTeam < ActiveRecord::Base
-  attr_accessible :season_id, :team_id
+  attr_accessible :season_id, :team_id, :sets_played, :wins, :losses
   belongs_to :team
   belongs_to :season 
   has_many :home_matches, :foreign_key => "season_home_team_id", :class_name => "Match"

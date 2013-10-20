@@ -44,7 +44,11 @@ class SeasonsController < ApplicationController
     @season = Season.find_by_id(params[:id])
     @seasonteams = @season.season_teams
     @seasonteam = @seasonteams.find_by_id(params[:id])
-    @matches = @season.matches.uniq{|match| match.id}
+    @matches = @season.matches.uniq{|match| match.date}
+#     @match = @matches.find ("'date BETWEEN ? AND ?', '#{DateTime.now}', '#{DateTime.now +7.days}' ")
+#     @match = @season.matches.find(:all, :conditions => ["date < #{DateTime.now} and date > #{DateTime.now + 7.days}"] )
+#     @match = Match.where("date>'#{DateTime.now}'")
+
     @teams = @season.teams.uniq{|team| team.id}
     @users = @season.users.uniq{|user| user.id}
 

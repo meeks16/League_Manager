@@ -30,6 +30,7 @@
 	<hr>
 
 	<div class="row-fluid marketing">
+		<p><a id="display-past-games" href="#">Display past matches</a></p>
 		<table border="1" cellpadding="8">
 			<thead>
 				<th>Date</th>
@@ -41,8 +42,8 @@
 
 			<% @matches.each do |match| %>
 			
-			<tr>
-				<td><%= match.date.strftime("%m/%d/%Y") %></td>
+			<tr <%= match.date < DateTime.now ? "class='done mute hide'" : "class='upcomming'" %>>
+				<td><%= match.date.strftime("%m/%d/%Y") %>  </td>
 				<td><%= match.timeslot.name%></td>
 				<td><%= match.court %></td>
 				<td><%= match.display_home_team_name %></td>
@@ -59,5 +60,18 @@
 </div>
 
 </html>
+
+<script type="text/javascript">
+(function ($) {
+	$(function() {
+		$('#display-past-games').click(function () {
+			$('.done').removeClass('hide');
+			return false;
+		});
+		
+	});
+})(jQuery);
+
+</script>
 
 

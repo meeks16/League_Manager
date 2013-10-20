@@ -33,8 +33,9 @@
 	
         <div class="span7">
 		
-        	<h4><%= link_to "Schedule", schedule_url %></h4>
-        	<table border="1" cellpadding="8">
+        	<h4><%= link_to "View Full Schedule", schedule_url %></h4>
+        	<p>Upcomming Matchups</p>
+        	<table>
 	        	<thead>
 	        		<th>Date</th>
 		        	<th>Time</th>
@@ -43,17 +44,17 @@
 		        	<th>Away</th>	
 		        </thead>
 		        
-		        <tbody>
-		        <% @matches.each do |match| %>
-		        <tr>
-		        	<td><%= match.date.strftime("%m/%d/%Y")%></td>
-			        <td><%= match.timeslot.name%></td>
-			        <td><%= match.court%></td>
-			        <td><%= match.display_home_team_name %></td>
-			        <td><%= match.display_away_team_name %></td>
+		        <% @matches.each do |m| %>
+		        
+		        <tr <%= m.date < DateTime.now || m.date > DateTime.now + 7.days ? "class='done mute hide'" : "class='upcomming'" %>>
+		        	<td><%= m.date.strftime("%m/%d/%Y")%></td>
+			        <td><%= m.timeslot.name%></td>
+			        <td><%= m.court%></td>
+			        <td><%= m.display_home_team_name %></td>
+			        <td><%= m.display_away_team_name %></td>
 			    </tr>
 			    <% end %>
-			    </tbody>
+			    
 			</table>
 			
         </div>
