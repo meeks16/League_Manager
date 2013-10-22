@@ -46,7 +46,7 @@
 		        
 		        <% @matches.each do |m| %>
 		        
-		        <tr >
+		        <tr <%= m.date < DateTime.now - 1.days || m.date > DateTime.now + 6.days ? "class='done mute hide'" : "class='upcomming'" %>>
 		        	<td><%= m.date.strftime("%m/%d/%Y")%></td>
 			        <td><%= m.timeslot.name%></td>
 			        <td><%= m.court%></td>
