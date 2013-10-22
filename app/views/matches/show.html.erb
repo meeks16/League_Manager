@@ -1,3 +1,11 @@
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -30,9 +38,10 @@
 			-->
 			
 			  </tr>
+			  
 			  <tr>
 			  	<td><%= @match.season_home_team.team.name %></td>
-			    <td></td>
+			    <td><%= @match.games.first.teamA_score %></td>
 			    <td></td>
 			    <td></td>
 			    <td></td>
@@ -41,7 +50,7 @@
 			  
 			  <tr>
 			  	<td><%= @match.season_away_team.team.name %></td>
-			    <td></td>
+			    <td><%= @match.games.first.teamB_score %></td>
 			    <td></td>
 			    <td></td>
 			    <td></td>

@@ -175,6 +175,18 @@ class Season < ActiveRecord::Base
   	end  	
   end 
   
+  def generate_games
+  	matches = self.matches
+  	number_of_games = 3
+  	
+  	number_of_games.times do
+  		matches.each do |m|
+  			m.games.create {|g| g.match_id = m.id}
+  		end
+  	end
+  
+  end
+  
   
   
 end
