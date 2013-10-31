@@ -6,7 +6,7 @@ LeagueManager::Application.routes.draw do
   	get 'sign_up' => 'devise/sessions#new'
   end
 
-  root :to => 'teams#index'
+  root :to => 'seasons#index'
   
   
   resources :matches
@@ -43,5 +43,5 @@ LeagueManager::Application.routes.draw do
   
   get 'seasons/:id/schedule' => 'matches#index', :as => 'schedule'
   
-  get 'seasons/:id/schedule/match' => 'matches#show', :as => 'match'
+  get 'seasons/:season_id/match/:id' => 'matches#show', :as => 'season_match'
 end

@@ -42,10 +42,11 @@
 
 			<% @matches.each do |match| %>
 			
-			<tr <%= match.date < DateTime.now ? "class='done mute hide'" : "class='upcomming'" %>>
+			<tr <%= match.date < DateTime.now - 1.days ? "class='done mute hide'" : "class='upcomming'" %>>
 				<td><%= match.date.strftime("%m/%d/%Y") %>  </td>
 				<td><%= match.timeslot.name%></td>
-				<td><%= link_to "#{match.court}", match %></td>
+				<td><%= match.court%></td>
+<!-- 				<td><%= link_to "#{match.court}", [match.season, match] %></td> -->
 				<td><%= match.display_home_team_name %></td>
 				<td><%= match.display_away_team_name %></td>
 				<% if user_signed_in? %>
@@ -55,6 +56,41 @@
 				<% end %>
 			</tr>
 			<% end %>
+		</table>
+	</div>
+	
+	<div>
+		<p> Playoffs </p>
+		<table border="1" cellpadding="4">
+			<thead>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Court 1</th>
+				<th>Court 2</th>
+			</thead>
+			<tbody>
+			
+			<tr>
+				<td>11/26/2013 </td>
+				<td>8:00pm</td>
+				<td>(3rd) vs (6th) </td>
+				<td>(4th) vs (5th) </td>
+			</tr>
+
+			<tr>
+				<td>12/03/2013 </td>
+				<td>7:00pm</td>
+				<td>(1st)  vs (Winner of 3rd vs 6th)</td>
+				<td>(2nd) vs (Winner of 4th vs 5th)</td>
+			</tr>
+			
+			<tr>
+				<td></td>
+				<td>8:00pm</td>
+				<td colspan = "2">Championship</td>
+			</tr>
+
+			</tbody>
 		</table>
 	</div>
 </div>

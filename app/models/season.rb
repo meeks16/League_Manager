@@ -150,6 +150,7 @@ class Season < ActiveRecord::Base
    	end
    	
   end
+
   
   def generate_schedule
   
@@ -177,16 +178,30 @@ class Season < ActiveRecord::Base
   
   def generate_games
   	matches = self.matches
-  	number_of_games = 3
-  	
+  	number_of_games = 3  	
   	number_of_games.times do
+  		
   		matches.each do |m|
   			m.games.create {|g| g.match_id = m.id}
   		end
   	end
-  
   end
   
+  def name_games
+  	matches = self.matches
+  		
+  	matches.each do |m|
+  		games = m.games
+  		game_count = games.count
+  		range = (1..game_count)
+  		
+  		
+  		range.each do |r|
+  			games.push ([number[range]])
+  		end
+  		
+  	end
   
+  end
   
 end

@@ -2,8 +2,9 @@ class MatchesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
   def index
-  	@season = Season.find(params[:id])
+  	@season = Season.find_by_id(params[:id])
     @matches = @season.matches
+#     @match = @matches.find(params[:id])
 #     @seasonteams = @season.season_teams
 #     @teams = @season.teams.uniq{|team| team.id}
 #     @users = @season.users.uniq{|user| user.id}
@@ -18,9 +19,8 @@ class MatchesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
-#   	@season = Season.find(params[:id])
-#   	@matches = @season.matches
-    @match = Match.find(params[:id])
+
+    @match = Match.find_by_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -42,6 +42,7 @@ class MatchesController < ApplicationController
   # GET /schedules/1/edit
   def edit
     @match = Match.find(params[:id])
+    @games = @match.games.all
   end
 
   # POST /schedules
