@@ -19,9 +19,8 @@ class MatchesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.json
   def show
-
     @match = Match.find_by_id(params[:id])
-
+    @season = @match.season
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @match }

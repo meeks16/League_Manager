@@ -43,5 +43,7 @@ LeagueManager::Application.routes.draw do
   
   get 'seasons/:id/schedule' => 'matches#index', :as => 'schedule'
   
-  get 'seasons/:season_id/match/:id' => 'matches#show', :as => 'season_match'
+  get 'seasons/:id/playoffs' => 'matches#playoff', :as => 'playoff'
+  
+  get 'seasons/:season_id/schedule/match/:id' => 'matches#show', :as => 'season_match'
 end

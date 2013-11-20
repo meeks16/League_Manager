@@ -30,34 +30,6 @@
 	<hr>
 	
 	<div class="row-fluid marketing">
-	
-        <div class="span7">
-		
-        	<h4><%= link_to "View Full Schedule", schedule_url %></h4>
-        	<p>Upcomming Matchups</p>
-        	<table>
-	        	<thead>
-	        		<th>Date</th>
-		        	<th>Time</th>
-		        	<th>Court</th>
-		        	<th>Home</th>
-		        	<th>Away</th>	
-		        </thead>
-		        
-		        <% @matches.each do |m| %>
-		        
-		        <tr <%= m.date < DateTime.now - 1.days || m.date > DateTime.now + 6.days ? "class='done mute hide'" : "class='upcomming'" %>>
-		        	<td><%= m.date.strftime("%m/%d/%Y")%></td>
-			        <td><%= m.timeslot.name%></td>
-			        <td><%= m.court%></td>
-			        <td><%= m.display_home_team_name %></td>
-			        <td><%= m.display_away_team_name %></td>
-			    </tr>
-			    <% end %>
-			    
-			</table>
-			
-        </div>
 		<div class="span5">
 			<h4><%= link_to "Standings", standings_url %></h4>
 			<table>
@@ -87,7 +59,72 @@
 				</tbody>
 			</table>	
 		</div>
+	
+        <div class="span7">
+		
+        	<h4><%= link_to "View Full Schedule", schedule_url %></h4>
+        	<p>Upcomming Matchups</p>
+        	<table>
+	        	<thead>
+	        		<th>Date</th>
+		        	<th>Time</th>
+		        	<th>Court</th>
+		        	<th>Home</th>
+		        	<th>Away</th>	
+		        </thead>
+		        
+		        <% @matches.each do |m| %>
+		        
+		        <tr <%= m.date < DateTime.now - 1.days || m.date > DateTime.now + 6.days ? "class='done mute hide'" : "class='upcomming'" %>>
+		        	<td><%= m.date.strftime("%m/%d/%Y")%></td>
+			        <td><%= m.timeslot.name%></td>
+			        <td><%= m.court%></td>
+			        <td><%= m.display_home_team_name %></td>
+			        <td><%= m.display_away_team_name %></td>
+			    </tr>
+			    <% end %>
+			    
+			</table>
+			
+			<p>* Open gym @ 8:00pm</p>
+        </div>
         
+
+        
+
+		
+		
+       	<div class="span7">
+			<h4><%= link_to "View Playoffs Projection", playoff_url %></h4>
+			<p> Playoffs 12/3/13 </p>
+			<table>
+				<thead>
+					<th>Time</th>
+					<th>Court 1</th>
+					<th>Court 2</th>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>7:00pm</td>
+						<td>(3rd) vs (6th) </td>
+						<td>(4th) vs (5th) </td>
+					</tr>
+
+					<tr>
+						<td>8:00pm</td>
+						<td>(2nd) vs (W of 3rd vs 6th)</td>
+						<td>(1st) vs (W of 4th vs 5th)</td>
+					</tr>
+			
+					<tr>
+						<td>9:00pm</td>
+						<td colspan = "2">Championship</td>
+					</tr>
+
+				</tbody>
+			</table>
+        </div> 
 	</div>
 	<hr>
 </div>

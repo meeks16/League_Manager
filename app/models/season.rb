@@ -178,30 +178,17 @@ class Season < ActiveRecord::Base
   
   def generate_games
   	matches = self.matches
-  	number_of_games = 3  	
-  	number_of_games.times do
+  	number_of_games = 3  
   		
-  		matches.each do |m|
-  			m.games.create {|g| g.match_id = m.id}
-  		end
-  	end
-  end
-  
-  def name_games
-  	matches = self.matches
-  		
+  	
   	matches.each do |m|
-  		games = m.games
-  		game_count = games.count
-  		range = (1..game_count)
-  		
-  		
-  		range.each do |r|
-  			games.push ([number[range]])
+  		idx = 0
+  		number_of_games.times do
+  			idx = idx +1
+  			m.games.create {|g| g.match_id = m.id, g.sequence_id = idx}
   		end
-  		
   	end
-  
   end
+  
   
 end

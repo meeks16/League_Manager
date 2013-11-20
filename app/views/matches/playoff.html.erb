@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<p id="notice"><%= notice %></p>
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-left">
+        	<li><%= link_to 'Home', season_url %></li>
+        	<li><%= link_to 'Standings', standings_url %></li>
+        	<li><%= link_to 'Schedule', schedule_url %></li>
+        </ul>
+      </div>
+
+
+<div class="container-wide">
+
+	<hr>
+	
+	<div class="jumbotron">
+		<h1>Playoffs</h1>
+		<h3>December 3, 2013</h3>
+	</div>
+	
+	<hr>
+
+		<div class="span10">
+			<h4><%= link_to "View Regular Season Schedule", schedule_url %></h4>
+			<table>
+				<thead>
+					<th>Time</th>
+					<th>Court 1</th>
+					<th>Court 2</th>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>7:00pm</td>
+						<td>Jabbonga(3rd) vs Generations(6th) </td>
+						<td>Fireballers(4th) vs Chivas(5th) </td>
+					</tr>
+
+					<tr>
+						<td>8:00pm</td>
+						<td>In Your Face(2nd) vs (W of 3rd vs 6th)</td>
+						<td>Mario Karters(1st) vs (W of 4th vs 5th)</td>
+					</tr>
+			
+					<tr>
+						<td>9:00pm</td>
+						<td colspan = "2">Championship</td>
+					</tr>
+
+				</tbody>
+			</table>
+        </div> 
+ <div>
+ <html>

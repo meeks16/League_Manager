@@ -19,17 +19,9 @@
     <%= f.label :timeslot %><br />
     <%= f.text_field :timeslot %>
   </div>
-  <%= form_for(@games) do |f| %>
+
   
-  <div class="field">
-    <%= f.label :teamA_score %><br />
-    <%= f.number_field :teamA_score %>
-  </div>
-  <div class="field">
-    <%= f.label :teamB_score %><br />
-    <%= f.number_field :teamB_score %>
-  </div>
-  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

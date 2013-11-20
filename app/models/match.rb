@@ -42,6 +42,11 @@ class Match < ActiveRecord::Base
   	opponent
   	
   end
+  
+#   def get_games
+#   	games = self.games
+#   	
+#   end
 
 end
 

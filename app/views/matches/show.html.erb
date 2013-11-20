@@ -25,11 +25,9 @@
 			
 			<thead>
 			  <tr>
-			  	<th>Team</th>
-			    <th>Game 1</th>
-			    <th>Game 2</th>
-			    <th>Game 3</th>
-			    <th>Games Won</th>
+			  	<th></th>
+			    <th><%= @match.season_home_team.team.name %></th>
+			    <th><%= @match.season_away_team.team.name %></th>
 			<!--
 			    <% if user_signed_in? %>
 			    	<th></th>
@@ -39,23 +37,14 @@
 			
 			  </tr>
 			  
+			  <% @match.games.each do |g| %>
 			  <tr>
-			  	<td><%= @match.season_home_team.team.name %></td>
-			    <td><%= @match.games.first.teamA_score %></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
+			  	<td><%= g.sequence_id %></td>
+			    <td><%= g.teamA_score %></td>
+			    <td><%= g.teamB_score %></td>
 			
 			  </tr>
-			  
-			  <tr>
-			  	<td><%= @match.season_away_team.team.name %></td>
-			    <td><%= @match.games.first.teamB_score %></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			
-			  </tr>
+			  <% end %>
 			  
 			</thead>
 
@@ -63,19 +52,9 @@
 			</table>
         </div>
 	</div>
-<!--
-<p>
-  <b>Home</b>
-  <%= @match.season_home_team.team.name %>
-</p>
 
-<p>
-  <b>Away</b>
-  <%= @match.season_away_team.team.name %>
-</p>
--->
 
 
 
 <%= link_to 'Edit', edit_match_path(@match) %> |
-<%= link_to 'Back', schedule_url %>
+<%= link_to 'Back', schedule_path(@season) %>
