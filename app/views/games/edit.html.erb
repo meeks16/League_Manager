@@ -1,0 +1,27 @@
+<h1>Editing Game</h1>
+
+<%= @game do |g| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= g.label :score %><br />
+    <%= g.number_field :teamA_score %>
+  </div>
+
+
+  
+
+  <div class="actions">
+    <%= g.submit %>
+  </div>
+<% end %>

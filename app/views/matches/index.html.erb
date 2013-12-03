@@ -45,8 +45,8 @@
 <!-- 			<tr <%= match.date < DateTime.now - 1.days ? "class='done mute hide'" : "class='upcomming'" %>> -->
 				<td><%= match.date.strftime("%m/%d/%Y") %>  </td>
 				<td><%= match.timeslot.name%></td>
-				<td><%= match.court%></td>
-<!-- 				<td><%= link_to "#{match.court}", [match.season, match] %></td> -->
+<!-- 				<td><%= match.court%></td> -->
+				<td><%= link_to "#{match.court}", [match.season, match] %></td>
 				<td><%= match.display_home_team_name %></td>
 				<td><%= match.display_away_team_name %></td>
 				<% if user_signed_in? %>

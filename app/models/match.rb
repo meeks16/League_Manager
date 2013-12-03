@@ -7,7 +7,7 @@ class Match < ActiveRecord::Base
   belongs_to :season_away_team, :foreign_key => "season_away_team_id", :class_name => "SeasonTeam"
   has_many :games
   belongs_to :timeslot
-  
+  accepts_nested_attributes_for :games
   def display_home_team_name
   	
   	if self.season_home_team.nil?

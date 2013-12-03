@@ -19,7 +19,23 @@
     <%= f.label :timeslot %><br />
     <%= f.text_field :timeslot %>
   </div>
+  <table>
+  
+  	<thead>
+  		<th>Game</th>
+  		<th> <%= @match.season_home_team.team.name %></th>
+  		<th> <%= @match.season_away_team.team.name %></th>
+  	</thead>
+		<%= f.fields_for :games do |games_fields| %>
+			  <tr>
+			  	<td><%= games_fields.text_field :sequence_id %></td>
+			    <td><%= games_fields.text_field :teamA_score %></td>
+			    <td><%= games_fields.text_field :teamB_score %></td>
+			  </tr>
 
+		<% end %>
+  
+  </table>
   
 
   <div class="actions">
