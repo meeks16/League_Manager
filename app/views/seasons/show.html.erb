@@ -30,7 +30,7 @@
 	<hr>
 	
 	<div class="row-fluid marketing">
-		<div class="span4">
+		<div class="span5">
 			<h4><%= link_to "Standings", standings_url %></h4>
 			<table>
 
@@ -38,7 +38,7 @@
 					<tr>
 						<th>Teams</th>
 						<th>Sets Won</th>
-<!-- 						<th>Sets loss</th> -->
+						<th>Sets loss</th>
 						<% if user_signed_in? %>
 							<th></th>
 							<th></th>
@@ -48,19 +48,18 @@
 				</thead>
 				
 				<tbody>
-				<% seasonteams = @seasonteams.sort_by! {|st|st.team.wins}%>
+				<% seasonteams = @seasonteams.sort_by! {|st|st.wins}%>
 				<% seasonteams.reverse.each do |seasonteam| %>
 					<tr>
           				<td><%= link_to "#{seasonteam.team.name} ", [seasonteam.season, seasonteam] %> </td>
-          				<td><%= seasonteam.team.wins %></td>
-<!--           				<td><%= seasonteam.team.losses %></td> -->
+          				<td><%= seasonteam.wins %></td>
+          				<td><%= seasonteam.losses %></td>
 					</tr>
           		<% end %>
 				</tbody>
 			</table>	
 		</div>
 	
-<!--
         <div class="span7">
 		
         	<h4><%= link_to "View Full Schedule", schedule_url %></h4>
@@ -87,46 +86,7 @@
 			    
 			</table>
 			
-			<p>* Open gym @ 8:00pm</p>
         </div>
--->
-        
-
-        
-
-		
-		
-       	<div class="span8">
-			<h4><%= link_to "View Playoffs", playoff_url %> / <%= link_to "View Full Schedule", schedule_url %></h4>
-<!-- 			<p> Playoffs 12/3/13 </p> -->
-			<table>
-				<thead>
-					<th>Time</th>
-					<th>Court 1</th>
-					<th>Court 2</th>
-				</thead>
-				
-				<tbody>
-					<tr>
-						<td>7:00pm</td>
-						<td>Jabbonga(3) vs Generations(6) </td>
-						<td>Fireballers(4) vs Chivas(5) </td>
-					</tr>
-
-					<tr>
-						<td>8:00pm</td>
-						<td>In Your Face(2) vs (W of 3vs6)</td>
-						<td>Mario Karters(1) vs (W of 4vs5)</td>
-					</tr>
-			
-					<tr>
-						<td>9:00pm</td>
-						<td colspan = "2">Championship</td>
-					</tr>
-
-				</tbody>
-			</table>
-        </div> 
 	</div>
 	<hr>
 </div>

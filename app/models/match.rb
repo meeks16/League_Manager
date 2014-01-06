@@ -8,6 +8,7 @@ class Match < ActiveRecord::Base
   has_many :games
   belongs_to :timeslot
   accepts_nested_attributes_for :games
+  
   def display_home_team_name
   	
   	if self.season_home_team.nil?
