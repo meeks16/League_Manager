@@ -124,8 +124,8 @@ class Season < ActiveRecord::Base
   	match_per_day = timeslot_count * court_count
   	
   	while !mymatches.empty? 
-#   		matches_for_day = mymatches.shift(match_per_day).shuffle
-  		matches_for_day = mymatches.shift(match_per_day)
+  		matches_for_day = mymatches.shift(match_per_day).shuffle
+#   		matches_for_day = mymatches.shift(match_per_day)
   		matchups_for_day = matchups.shift(match_per_day)
   	
   		matches_for_day.each_index do |i|
