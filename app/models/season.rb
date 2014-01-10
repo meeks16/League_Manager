@@ -121,7 +121,9 @@ class Season < ActiveRecord::Base
   	court_count = self.number_of_courts
   	mymatches = self.matches.clone
   	matchups = self.get_all_matchups
-  	match_per_day = timeslot_count * court_count
+#   	match_per_day = timeslot_count * court_count
+  	match_a_day = timeslot_count * court_count
+  	match_per_day = match_a_day - 1
   	
   	while !mymatches.empty? 
   		matches_for_day = mymatches.shift(match_per_day).shuffle
