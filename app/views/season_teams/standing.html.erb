@@ -29,16 +29,19 @@
 	<hr>
 	
 	<div class="row-fluid marketing">
-		<div class="span6">
+		<div class="span12">
 
 			<table>
 
 				<thead>
 					<tr>
 						<th>Teams</th>
-						<th>Sets Played</th>
-						<th>Sets Won</th>
-						<th>Sets loss</th>
+						<th>Games Played</th>
+						<th>Game W</th>
+						<th>Game L</th>
+						<th>Matches Played</th>
+						<th>Match W</th>
+						<th>Match L</th>
 						<% if user_signed_in? %>
 							<th></th>
 							<th></th>
@@ -54,6 +57,9 @@
           				<td><%= seasonteam.sets_played %></td>
           				<td><%= seasonteam.wins %></td>
           				<td><%= seasonteam.losses %></td>
+          				<td><%= seasonteam.match_played %></td>
+          				<td><%= seasonteam.match_wins %></td>
+          				<td><%= seasonteam.match_losses %></td>
 					</tr>
           		<% end %>
 				</tbody>
