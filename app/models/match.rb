@@ -40,6 +40,7 @@ class Match < ActiveRecord::Base
   	else 
   		opponent = self.display_home_team_name
   	end
+  	
   	opponent
   	
   end
