@@ -37,7 +37,11 @@ LeagueManager::Application.routes.draw do
   
   get 'seasons/:id' => 'seasons#show', :as => 'season'
   
+  put 'seasons/:season_id/season_teams/:id' => 'season_teams#update', :as => 'season_team'
+  
   get 'seasons/:id/standings' => 'season_teams#standing', :as => 'standings'
+  
+  get 'seasons/:season_id/standings/:id/edit' => 'season_teams#edit', :as => 'edit_standing'
   
   get 'seasons/:season_id/season_teams/:id' => 'season_teams#show', :as => 'season_season_team'
   

@@ -22,8 +22,12 @@
 		<h1> <%= @season_team.team.name %> </h1>
 		<p class="lead">Record:(<%= @season_team.wins%>W-<%=@season_team.losses%>L)</p>
 	</div>
-
+	
 	<hr>
+	
+	<li> Games Played: <%= @season_team.sets_played %> (<%= @season_team.wins%> Wins - <%=@season_team.losses%> Losses) </li>
+	<li> Matches Played: <%= @season_team.match_played %> (<%= @season_team.match_wins%> Wins - <%=@season_team.match_losses%> Losses)</li>
+	
 	<div class="row-fluid marketing">
 
 
