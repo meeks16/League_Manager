@@ -64,17 +64,17 @@ class MatchesController < ApplicationController
   # PUT /schedules/1.json
   def update
     @match = Match.find(params[:id])
-    @match.update(params.require(:match_date, :match_timeslot, game_attributes: [:sequence_id, :teamA_score, :teamB_score]))
-    redirect_to @match
-#     respond_to do |format|
-#       if @match.update_attributes(params[:match])
-#         format.html { redirect_to @match, notice: 'Match was successfully updated.' }
-#         format.json { head :no_content }
-#       else
-#         format.html { render action: "edit" }
-#         format.json { render json: @match.errors, status: :unprocessable_entity }
-#       end
-#     end
+#     @match.update(params.require(:match_date, :match_timeslot, :season_home_team_id, :season_away_team_id))
+#     redirect_to @match
+    respond_to do |format|
+      if @match.update_attributes(params[:match])
+        format.html { redirect_to @match, notice: 'Match was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @match.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /schedules/1

@@ -16,9 +16,20 @@
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :timeslot %><br />
-    <%= f.text_field :timeslot %>
+    <%= f.label :timeslot_id %><br />
+    <%= f.number_field :timeslot_id %>
   </div>
+  
+  <div class="field">
+    <%= f.label :season_home_team_id %><br />
+    <%= f.number_field :season_home_team_id %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :season_away_team_id %><br />
+    <%= f.number_field :season_away_team_id %>
+  </div> 
+  
   <table>
   
   	<thead>
