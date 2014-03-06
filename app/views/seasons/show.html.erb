@@ -30,7 +30,7 @@
 	<hr>
 	
 	<div class="row-fluid marketing">
-		<div class="span5">
+		<div class="span3">
 			<h4><%= link_to "Standings", standings_url %></h4>
 			<table>
 
@@ -38,7 +38,7 @@
 					<tr>
 						<th>Teams</th>
 						<th>Sets Won</th>
-						<th>Sets loss</th>
+<!-- 						<th>Sets loss</th> -->
 						<% if user_signed_in? %>
 							<th></th>
 							<th></th>
@@ -53,17 +53,18 @@
 					<tr>
           				<td><%= link_to "#{seasonteam.team.name} ", [seasonteam.season, seasonteam] %> </td>
           				<td><%= seasonteam.wins %></td>
-          				<td><%= seasonteam.losses %></td>
+<!--           				<td><%= seasonteam.losses %></td> -->
 					</tr>
           		<% end %>
 				</tbody>
 			</table>	
 		</div>
 	
-        <div class="span7">
+        <div class="span9">
 		
-        	<h4><%= link_to "View Full Schedule", schedule_url %></h4>
-        	<p>Upcomming Matchups</p>
+        	<h4><%= link_to "View Regular Season Schedule", schedule_url %></h4>
+        	<h3>Playoffs<h3>
+<!--         	<p>Upcomming Matchups</p> -->
 <!--
         	
         	<% @matches.each do |m| %>     
@@ -74,7 +75,54 @@
         	
         	<% end %>
 -->
-        	
+			<h4>March 11, 2013</h4>
+			<table>
+				<thead>
+					<th>Time</th>
+					<th>Court 1</th>
+					<th>Court 2</th>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>7:00pm</td>
+						<td>(1)StrightSix vs (8)Babes and Bobs </td>
+						<td>(4)In Your Face vs (5)Fireballers </td>
+					</tr>
+
+					<tr>
+						<td>8:00pm</td>
+						<td>(2)Mario Karters vs (7)Generations</td>
+						<td>(3)Jabbonga vs (6) Chivas</td>
+					</tr>
+
+				</tbody>
+			</table>        
+        				<br>
+			
+			<h4>March 18, 2013</h4>
+			<table>
+				<thead>
+					<th>Time</th>
+					<th>Court 1</th>
+					<th>Court 2</th>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>7:00pm</td>
+						<td>[W of (1) vs (8)] VS [W of (4) vs (5)] </td>
+						<td>[W of (2) vs (7)] VS [W of (3) vs (6)] </td>
+					</tr>
+
+					<tr>
+						<td>8:00pm</td>
+						<td colspan = "2">Championship</td>
+					</tr>
+
+				</tbody>
+			</table>
+<!--
         	<table>
 	        	<thead>
 	        		<th>Date</th>
@@ -94,6 +142,7 @@
 			        <td><%= link_to "#{m.display_away_team_name}", [m.season, m.season_away_team] %></td>
 			    </tr>
 			    <% end %>
+-->
 			    
 			</table>
 			
