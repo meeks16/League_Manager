@@ -45,6 +45,10 @@ LeagueManager::Application.routes.draw do
   
   get 'seasons/:season_id/season_teams/:id' => 'season_teams#show', :as => 'season_season_team'
   
+  post 'season_teams' => 'season_teams#create', :as => 'season_teams'
+  
+  get 'season_teams/new' => 'season_teams#new', :as => 'new_season_team'
+  
   get 'seasons/:id/schedule' => 'matches#index', :as => 'schedule'
   
   get 'seasons/:id/playoffs' => 'matches#playoff', :as => 'playoff'

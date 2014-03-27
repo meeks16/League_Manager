@@ -11,7 +11,14 @@
     </div>
   <% end %>
 
-
+  <div class="field">
+    <%= f.label :season_id %><br />
+    <%= f.number_field :season_id %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.number_field :team_id %>
+  </div>
   <div class="field">
     <%= f.label :sets_played %><br />
     <%= f.number_field :sets_played %>

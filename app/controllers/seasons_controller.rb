@@ -11,14 +11,14 @@ class SeasonsController < ApplicationController
   end
   
   def new
-    @seasons = Season.new
+    @season = Season.new
   end
   
   def create
-    @seasons = Season.new(params[:Season])
+    @season = Season.new(params[:Season])
     
-    if @seasons.save
-      redirect_to seasons_url(@seasons), :notice => "Picture was successfully saved."
+    if @season.save
+      redirect_to seasons_url(@season), :notice => "Picture was successfully saved."
     else
       flash[:notice] = "Something went wrong."
       render 'new'
@@ -26,18 +26,18 @@ class SeasonsController < ApplicationController
   end
   
   def update
-    @seasons = SeasonTeam.find_by_id(params[:id])
+    @season = Season.find_by_id(params[:id])
         
-    if @seasons.update_attributes(params[:season])
-      redirect_to seasons_url(@seasons), :notice => "Picture was successfully updated."
+    if @season.update_attributes(params[:season])
+      redirect_to seasons_url(@season), :notice => "Picture was successfully updated."
     else
-      flash[:notice] = "Something went wrong."
-      render 'edit'
-    end
+      format.html { render action: "edit" }
+      format.json { render json: @season.errors, status: :unprocessable_entity }
+     end
   end
   
   def edit
-    @seasons = SeasonTeam.find_by_id(params[:id])
+    @season = Season.find_by_id(params[:id])
   end
   
   def show
@@ -45,10 +45,6 @@ class SeasonsController < ApplicationController
     @seasonteams = @season.season_teams
     @seasonteam = @seasonteams.find_by_id(params[:id])
     @matches = @season.matches.uniq{|match| match.date}
-#     @match = @matches.find ("'date BETWEEN ? AND ?', '#{DateTime.now}', '#{DateTime.now +7.days}' ")
-#     @match = @season.matches.find(:all, :conditions => ["date < #{DateTime.now} and date > #{DateTime.now + 7.days}"] )
-#     @match = Match.where("date>'#{DateTime.now}'")
-
     @teams = @season.teams.uniq{|team| team.id}
     @users = @season.users.uniq{|user| user.id}
 

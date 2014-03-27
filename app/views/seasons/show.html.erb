@@ -30,7 +30,7 @@
 	<hr>
 	
 	<div class="row-fluid marketing">
-		<div class="span3">
+		<div class="span5">
 			<h4><%= link_to "Standings", standings_url %></h4>
 			<table>
 
@@ -38,7 +38,7 @@
 					<tr>
 						<th>Teams</th>
 						<th>Sets Won</th>
-<!-- 						<th>Sets loss</th> -->
+						<th>Sets loss</th>
 						<% if user_signed_in? %>
 							<th></th>
 							<th></th>
@@ -53,19 +53,23 @@
 					<tr>
           				<td><%= link_to "#{seasonteam.team.name} ", [seasonteam.season, seasonteam] %> </td>
           				<td><%= seasonteam.wins %></td>
-<!--           				<td><%= seasonteam.losses %></td> -->
+          				<td><%= seasonteam.losses %></td>
 					</tr>
           		<% end %>
 				</tbody>
-			</table>	
+				
+			</table>
+		
+			<p><%= link_to "Add SeasonTeam", new_season_team_url %></p>
+
+	
 		</div>
 	
-        <div class="span9">
+        <div class="span6">
 		
         	<h4><%= link_to "View Regular Season Schedule", schedule_url %></h4>
-        	<h3>Playoffs<h3>
-<!--         	<p>Upcomming Matchups</p> -->
 <!--
+        	<p>Upcomming Matchups</p>
         	
         	<% @matches.each do |m| %>     
         	
@@ -76,30 +80,6 @@
         	<% end %>
 -->
 
-			
-			<h4>March 18, 2013</h4>
-			<table>
-				<thead>
-					<th>Time</th>
-					<th>Court 1</th>
-					<th>Court 2</th>
-				</thead>
-				
-				<tbody>
-					<tr>
-						<td>7:00pm</td>
-						<td>Babes and Bobs(8) VS In Your Face(4) </td>
-						<td>Mario Karters(2) VS Chivas(6) </td>
-					</tr>
-
-					<tr>
-						<td>8:00pm</td>
-						<td colspan = "2">Championship</td>
-					</tr>
-
-				</tbody>
-			</table>
-<!--
         	<table>
 	        	<thead>
 	        		<th>Date</th>
@@ -119,7 +99,6 @@
 			        <td><%= link_to "#{m.display_away_team_name}", [m.season, m.season_away_team] %></td>
 			    </tr>
 			    <% end %>
--->
 			    
 			</table>
 			

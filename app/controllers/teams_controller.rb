@@ -17,10 +17,10 @@ class TeamsController < ApplicationController
     @users = @team.users.uniq{|user| user.id}
     @teams = Team.all
     @season_team = @team.season_teams.first
-    @hmatch = @season_team.home_matches
-    @amatch = @season_team.away_matches
-    @matches = @hmatch | @amatch
-    
+#     @hmatch = @season_team.home_matches
+#     @amatch = @season_team.away_matches
+#     @matches = @hmatch | @amatch
+#     
 #     @teams = @season.teams.uniq{|team| team.id}
 #     @users = @season.users.uniq{|user| user.id}
     respond_to do |format|

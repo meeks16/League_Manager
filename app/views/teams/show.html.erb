@@ -39,35 +39,7 @@
         	<% end %>
         </div>
 	
-        <div class="span6">
-			<h4>Schedule</h4>
-			<body>
 
-				<table border="1" cellpadding="8">
-					<thead>
-
-						<th>Date</th>
-						<th>Time</th>
-						<th>Court</th>
-						<th>Opponent</th>
-
-					</thead>
-				
-				
-				<% @matches.each do |match| %>
-					<tr>
-						<td><%= match.date.strftime("%m/%d/%Y") %></td>
-						<td><%= match.timeslot.name%></td>
-						<td><%= match.court%></td>
-						
-						<td><%= match.season_away_team.team.name %></td>
-
-					</tr>
-				<% end %>
-				
-				</table>
-			</body>
-		</div>
 	</div>
 
         

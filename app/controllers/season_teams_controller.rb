@@ -34,6 +34,7 @@ class SeasonTeamsController < ApplicationController
   # GET /teams/new.json
   def new
     @season_team = SeasonTeam.new
+    @season_team.season = Season.find_by_id(params[:season])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +50,7 @@ class SeasonTeamsController < ApplicationController
   # POST /teams
   # POST /teams.json
   def create
-    @season_team = SeasonTeam.new(params[:team])
+    @season_team = SeasonTeam.new(params[:season_team])
 
     respond_to do |format|
       if @season_team.save
@@ -61,6 +62,7 @@ class SeasonTeamsController < ApplicationController
       end
     end
   end
+  
 
   # PUT /teams/1
   # PUT /teams/1.json

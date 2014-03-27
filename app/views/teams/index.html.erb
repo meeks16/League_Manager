@@ -33,10 +33,8 @@
     <td><%= team.sets_played %></td>
     <td><%= team.wins %></td>
     <td><%= team.losses %></td>
-    <% if user_signed_in? %>
     	<td><%= link_to 'Edit', edit_team_path(team) %></td>
     	<td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
   </tr>
 <% end %>
 </tbody>
@@ -44,7 +42,5 @@
 </table>
 
 <br />
-	<% if user_signed_in? %>
 		<%= link_to 'New Team', new_team_path %>
-	<% end %>
 </html>
