@@ -51,6 +51,8 @@
 <!-- 				<td><%= match.display_home_team_name %></td> -->
 				<td><%= link_to "#{match.display_away_team_name} ", [match.season, match.season_away_team]%></td>
 <!-- 				<td><%= match.display_away_team_name %></td> -->
+				<td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
 				<% if user_signed_in? %>
 					<td><%= link_to 'Show', match %></td>
 					<td><%= link_to 'Edit', edit_match_path(match) %></td>

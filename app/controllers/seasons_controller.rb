@@ -56,4 +56,14 @@ class SeasonsController < ApplicationController
     end
   end
   
+  def assign
+    @season = Season.find(params[:id])
+    @season.assign_teams
+
+    respond_to do |format|
+      format.html { redirect_to season_url }
+      format.json { head :no_content }
+    end
+  end
+  
 end

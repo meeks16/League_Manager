@@ -1,0 +1,26 @@
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="container-wide">
+	<hr>
+	<div class="jumbotron">
+		<h1> Season <%= @timeslot.season_id %>  </h1>
+		<p>Timeslot <%= @timeslot.name %> </p>
+	</div>
+
+	<hr>
+<div>
+
+        
+<%= link_to 'Edit', edit_team_path(@timeslot) %> |
+<%= link_to 'Back to League', seasons_path %>
+	<hr>
+</div>

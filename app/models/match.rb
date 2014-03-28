@@ -18,7 +18,7 @@ class Match < ActiveRecord::Base
   		home_team = self.season_home_team.team.name
   	end
   	
-  	home_team
+  	home_team 
   end
   
     def display_away_team_name
@@ -30,7 +30,7 @@ class Match < ActiveRecord::Base
   		away_team = self.season_away_team.team.name
   	end
   	
-  	away_team
+  	away_team 
   end
   
   def display_opponent(season_team)

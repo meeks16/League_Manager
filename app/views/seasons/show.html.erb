@@ -60,7 +60,7 @@
 				
 			</table>
 		
-			<p><%= link_to "Add SeasonTeam", new_season_team_url %></p>
+<!-- 			<p><%= link_to "Add SeasonTeam", new_season_team_url %></p> -->
 
 	
 		</div>
@@ -102,6 +102,10 @@
 			    
 			</table>
 			
+			<INPUT type='BUTTON' value='New Game' onclick='generate_schedule;'>
+			
+			<%= link_to 'Assign Teams', @season, method: :assign_teams, data: { confirm: 'Are you sure?' } %>
+		
         </div>
 	</div>
 	<hr>

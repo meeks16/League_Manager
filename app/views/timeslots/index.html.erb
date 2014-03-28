@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <title>league Manager</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<h1>timeslots</h1>
+
+<table>
+
+<thead>
+  <tr>
+    <th>Season</th>
+    <th>Timeslot</th>
+  </tr>
+</thead>
+
+<tbody>
+<% @timeslots.each do |timeslot| %>
+  <tr>
+  	<td><%= timeslot.season_id %></td>
+    <td><%= timeslot.name %></td>
+    	<td><%= link_to 'Edit', edit_timeslot_path(timeslot) %></td>
+    	<td><%= link_to 'Destroy', timeslot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+ 
+</table>
+
+<br />
+		<%= link_to 'New Timeslot', new_timeslot_path %>
+
+</html>

@@ -12,6 +12,7 @@ class Season < ActiveRecord::Base
 
   require 'date'
   
+  
   def rotate(season_team_ids)
 
   	
@@ -125,7 +126,7 @@ class Season < ActiveRecord::Base
   	match_a_day = timeslot_count * court_count
   	match_per_day = match_a_day - 1
   	
-  	while !mymatches.empty? 
+  	while !mymatches.empty?
   		matches_for_day = mymatches.shift(match_per_day).shuffle
 #   		matches_for_day = mymatches.shift(match_per_day)
   		matchups_for_day = matchups.shift(match_per_day)

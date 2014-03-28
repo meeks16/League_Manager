@@ -8,6 +8,7 @@ LeagueManager::Application.routes.draw do
 
   root :to => 'seasons#index'
   
+  resources :timeslots
   
   resources :matches
 
